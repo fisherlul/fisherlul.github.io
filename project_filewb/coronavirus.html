@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coronavirus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/styles/custom-style.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/Buoi 4/style.css" />
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            width: 90%;
+            margin-left: 5%
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: inline-block;
+            color: whitesmoke;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            color: gray;
+        }
+
+        .cha {
+            display: flex;
+            justify-content: center;
+            margin-right: 6%;
+            margin-left: 6%
+        }
+
+        .cha2 {
+            display: flex;
+            flex-direction: row;
+            margin-right: 6%;
+            margin-left: 6%
+        }
+
+        .cha3 {
+            display: flex;
+            flex-direction: row;
+            margin-right: 6%;
+            margin-left: 6%
+        }
+
+        .cha4 {
+            display: flex;
+            justify-content: center;
+            margin-right: 6%;
+            margin-left: 6%
+        }
+
+        .item2 {
+            margin-left: 2%
+        }
+
+        .item3 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item4 {
+            display: flex;
+            flex-direction: row;
+            padding-left: 2%
+        }
+
+        .info2 {
+            padding-left: 4%;
+        }
+
+        .info1 {
+            width: 50%;
+            padding-left: 3%
+        }
+
+        .info {
+            width: 75%;
+            padding-left: 2%
+        }
+
+        h1 {
+            font-family: 'DM Serif Display', serif;
+        }
+
+        h2 {
+            font-family: 'Frank Ruhl Libre', serif;
+        }
+
+        h3 {
+            font-family: 'Frank Ruhl Libre', serif;
+        }
+
+        h4 {
+            font-family: 'Frank Ruhl Libre', serif;
+        }
+
+        h5 {
+            font-family: 'Roboto Slab', serif;
+        }
+
+        p {
+            font-family: 'STIX Two Math', serif;
+        }
+
+        a {
+            font-family: 'STIX Two Math', serif;
+        }
+    </style>
+</head>
+
+<body>
+    <ul style=" margin-left: 6%">
+        <li><a href="http://127.0.0.1:5500/notPáO.html">Home</a></li>
+        <li><a href="http://127.0.0.1:5500/coronavirus.html">Coronavirus</a></li>
+        <li><a href="http://127.0.0.1:5500/race&reckonin.html">Race & Reckoning</a></li>
+        <li><a href="http://127.0.0.1:5500/investigations.html">Investigations</a></li>
+        <li><a href="http://127.0.0.1:5500/aboutUS.html">About US</a></li>
+    </ul>
+    <br>
+    <hr style=" margin-right: 6%; margin-left: 6%">
+    <h1 style="margin-left: 36%; font-size: 60px">CORONAVIRUS</h1>
+    <div style="display: flex; justify-content: space-around; align-items: center; margin-right: 6%; margin-left: 6%">
+        <p>U.S. map</p>
+        <p>World map</p>
+        <p>Vaccine tracker</p>
+        <p>Vaccine FAQ</p>
+        <p>Variants FAQ</p>
+        <p>A pandemic year</p>
+        <p>Coronavirus Living</p>
+    </div>
+    <hr style=" margin-right: 6%; margin-left: 6%">
+    <div class="cha">
+        <div style="display: flex; flex-direction: column; width: 40%; height: 45%; padding-right: 2%">
+            <div>
+                <h3>Note to readers</h3>
+                <p>The Daily Bugle is providing our daily live updates, comprehensive guide to the pandemic and our
+                    Coronavirus Updates newsletter for free, so that all readers have access to this important
+                    information about the coronavirus pandemic.</p>
+            </div>
+            <hr>
+            <div>
+                <h2>Maryland’s coronavirus state of emergency to end July 1</h2>
+                <p>Maryland has a record-low positivity rate, with more than 72 percent of its adult population at least
+                    partly vaccinated.</p>
+                <p>By Ovetta Wiggins</p>
+            </div>
+            <hr>
+            <div>
+                <h2>Asked to adjust his mask, a customer killed a cashier and started a shootout, police say</h2>
+                <p>The cashier, 41-year-old Laquitta Willis, was described as a kind and loving person who did nothing
+                    to provoke the deadly attack.</p>
+                <p>By Kim Bellware</p>
+            </div>
+            <hr>
+            <div>
+                <h2>Palestinians cancel vaccine deal with Israel, saying doses are too close to expiration date</h2>
+                <p>The new Israeli government had planned to transfer about-to-expire vaccine doses now in exchange for
+                    the same number of doses later in the year.</p>
+                <p>By Steve Hendrix</p>
+            </div>
+        </div>
+        <hr>
+        <div style="display: flex; flex-direction: column">
+            <div style="padding-left: 2%;">
+                <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FN4XGCOGNVEI6XIREXVM32IQZPQ%252Ejpg&w=760&h=427"
+                    alt="coronavirus">
+                <h2>Covid-19 live updates: California officially reopens its economy, New York celebrates with fireworks
+                </h2>
+                <p>California, New York and other states are lifting most of their pandemic restrictions, as governors
+                    cautiously celebrate reopening.</p>
+                <p>By Reis Thebault, Katerina Ang, Miriam Berger and Paulina Firozi</p>
+            </div>
+            <div>
+                <hr style="margin-left: 2%; margin-right: 5%; opacity: 50%">              
+            </div>
+            <div style="display: flex; flex-direction: column; padding-left: 2%;">
+                <h3>Opinion</h3>
+                <div class="item" style="display: flex; padding-left: 2%">
+                    <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2F3VHY2DV2LAI6XPCKMKCJZ5WMVE%252Ejpg&w=166&h=111"
+                        alt="vaccinate" style="width: 20%; height: 85%">
+                    <div class="info1">
+                        <h3>Why we need to vaccinate young children, too</h3>
+                        <p>Yes, the risk of illness and death from Covid-19 is lower for young children than for older
+                            people. But that doesn't mean it's not serious.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr style=" margin-right: 6%; margin-left: 6%">
+    <br>
+    <div class="cha2">
+        <div class="item3">
+            <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FXYZSFWWLC4I6XBYIMSMR6KWPFA%252Ejpg&w=298&h=167"
+                alt="detroit" style="width: 370px; height: 210px; padding-left: 3%">
+            <div class="info">
+                <h5>Opinion</h5>
+                <h2>Detroit’s low vaccination rate isn’t just about Black ‘hesitancy’</h2>
+            </div>
+        </div>
+
+        <div class="item3">
+            <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FKHOD6XGOFII6XJ7RKK4IOC7PPQ%252Ejpg&w=298&h=167"
+                alt="fireworks" style="width: 370px; height: 200px; padding-left: 2%">
+            <div class="info">
+                <h2>What’s happening — and what’s safe — this Fourth of July in Washington</h2>
+            </div>
+        </div>
+
+        <div class="item3">
+            <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FODKVDEDWAYI6XFEJR562ZVI6OU%252Ejpg&w=298&h=167"
+                alt="vaccinating station" style="width: 350px; height: 200px; padding-left: 1%">
+            <div class="info" >
+                <h2>Starting Saturday, D.C. residents can get gift cards when they get vaccinated</h2>
+            </div>
+        </div>
+
+        <div class="item3">
+            <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2F5HAE3EW6NUI6XIT7RMUUSMHJLM%252Ejpg&w=298&h=167"
+                alt="covax transport" style="width: 370px; height: 210px; padding-left: 1%">
+            <div class="info">
+                <h5>Opinion</h5>
+                <h2>Liberal democracies are running out of time to save the rest of the planet from Covid</h2>
+            </div>
+        </div>
+
+        <div class="item3">
+            <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FE6YPLWW6LYI6XIT7RMUUSMHJLM%252Ejpg&w=298&h=167"
+                alt="vaccination" style="width: 370px; height: 210px; padding-left: 1%">
+            <div class="info">
+                <h2>What you need to know about the highly contagious delta variant</h2>
+            </div>
+        </div>
+
+        <div class="item3">
+            <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FNDLVAZHAZEI6XNIHNF3WFUEQ3U%252Ejpg&w=298&h=167"
+                alt="studying" style="width: 370px; height: 210px; padding-left: 1%">
+            <div class="info">
+                <h2>CDC says students vaccinated against the coronavirus can go maskless in fall</h2>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript">
+
+        $(".cha2").slick({
+            autoplay: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            speed: 300
+        });
+
+    </script>
+    <hr style=" margin-right: 6%; margin-left: 6%">
+    <h3 style="margin-left: 6%">DON'T MISS</h3>
+    <div class="cha3">
+        <br>
+        <div class="item2.2">
+            <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FGR6JLDETOZB23D7PFCISTZ6L2I%252Ejpg&w=232&h=130"
+                alt="map" style="padding-left: 8%">
+            <div class="info2">
+                <h2>U.S. coronavirus cases and state maps: Tracking cases, deaths</h2>
+            </div>
+        </div>
+        <hr>
+        <div class="item2.2">
+            <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FRT2SBUEH6UI6VAG72JFTLJLIVY%252Ejpg&w=232&h=130"
+                alt="history" style="padding-left: 8%">
+            <div class="info2">
+                <h2>An oral history of the coronavirus pandemic</h2>
+            </div>
+        </div>
+        <hr>
+        <div class="item2.2">
+            <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Fimg%252Ewashingtonpost%252Ecom%2Fresizer%2F5_C4HwQLmZewwTJQWe-oVf5P5J0%3D%2F480x270%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FRB432MHARYI6VAMBMBXGAO5RYQ%252Ejpg&w=232&h=130"
+                alt="world" style="padding-left: 8%">
+            <div class="info2">
+                <h2>Mapping the worldwide spread of the coronavirus</h2>
+            </div>
+        </div>
+        <hr>
+        <div class="item2.2">
+            <iframe width='250' height='131' scrolling='no'
+                src='https://www.washingtonpost.com/video/c/embed/b4d75533-1458-41ff-adbe-ce67b9c1e06b' frameborder='0'
+                webkitallowfullscreen mozallowfullscreen allowfullscreen style="margin-left: 15%"></iframe>
+            <div class="info2">
+                <h2>A day in a hospital as it receives its first coronavirus vaccines</h2>
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr style=" margin-right: 6%; margin-left: 6%">
+    <h3 style="margin-left: 6%">MORE ON CORONAVIRUS</h3>
+    <div class="cha4">
+        <div style="padding-left: 2%;">
+            <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FMJQBN5WQLEI6XJ7RKK4IOC7PPQ%252Ejpg&w=496&h=279"
+                alt="vaccine">
+            <p style="font-size: 13px;">(Athit Perawongmetha/Reuters)</p>
+            <div style="padding-right: 2%;">
+                <h3>Court turns back European Union demand for surge in AstraZeneca vaccine doses</h3>
+                <p>By Loveday Morris and Quentin Ariès</p>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <div class="item4">
+                <div>
+                    <h3>Jill Biden tours Southern states to encourage vaccination as youth cases grow</h3>
+                    <p>By Katerina Ang and Kim Bellware</p>
+                </div>
+                <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FDSRJLZGTYQI6XM47AWRNO5VR6Q%252Ejpg&w=166&h=93"
+                    alt="airport reporter" style="padding-left: 3%">
+            </div>
+            <hr>
+            <div class="item4">
+                <div>
+                    <h3>Seattle scientist digs up deleted coronavirus genetic data, adding fuel to the covid origin
+                        debate</h3>
+                    <p>By Joel Achenbach, Ben Guarino and Yasmeen Abutaleb</p>
+                </div>
+                <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FRBJC2HGUI4I6XHZJ5HTMT2CDYY%252Ejpg&w=166&h=93"
+                    alt="market" style="padding-left: 3%">
+            </div>
+            <hr>
+            <div class="item4">
+                <div>
+                    <h3>Headed to a casino this summer? Here’s what to expect.</h3>
+                    <p>By Erika Mailman</p>
+                </div>
+                <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FQMTPEEWTSUI6XM47AWRNO5VR6Q%252Ejpg&w=166&h=93"
+                    alt="casino" style="padding-left: 3%">
+            </div>
+            <hr>
+            <div class="item4">
+                <div>
+                    <h3>School nurses say they are being left out of reopening conversations</h3>
+                    <p>By Valerie Strauss</p>
+                </div>
+                <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FY2M4I2DH6UI6XOVYOB7YO2OXQU%252Ejpg&w=166&h=93"
+                    alt="nurse" style="padding-left: 3%">
+            </div>
+        </div>
+    </div>
+    <hr style=" margin-right: 6%; margin-left: 6%">
+    <div id="footer" style=" display: flex; justify-content: space-around; align-items: space-around">
+        <div>
+            <h4>About Us</h4>
+            <p>Public Relations</p>
+            <p>Careers</p>
+            <p>Diversity & Inclusion</p>
+            <p>Newspaper in Education</p>
+            <p>Today's Paper</p>
+            <p>WP Creative Group</p>
+            <p>Events</p>
+            <p>Policies & Standards</p>
+        </div>
+        <div>
+            <h4>Get The Post</h4>
+            <p>Home Delivery</p>
+            <p>Digital Subscription</p>
+            <p>Gift Subscriptions</p>
+            <p>Mobile & Apps</p>
+            <p>Newsletters & Alerts</p>
+            <p>Daily Bugle Live</p>
+            <p>Reprints & Permissions</p>
+            <p>Post Store</p>
+            <p>Books & eBooks</p>
+            <p>e-Replica</p>
+        </div>
+        <div>
+            <h4>Help</h4>
+            <p>Contact the Newsroom</p>
+            <p>Contact Customer Care</p>
+            <p>Reader Representative</p>
+            <p>Advertise</p>
+            <p>Licensing & Syndication</p>
+            <p>Request a Correction</p>
+            <p>Send a News Tip</p>
+            <p>Report a Vulnerability</p>
+        </div>
+        <div>
+            <h4>Terms of Use</h4>
+            <p>Digital Products Terms of Sal</p>
+            <p>Print Products Terms of Sale</p>
+            <p>Terms of Service</p>
+            <p>Privacy Policy</p>
+            <p>Submissions & Discussion Policy</p>
+            <p>RSS Terms of Service</p>
+            <p>Ad Choices</p>
+        </div>
+    </div>
+    <hr>
+    <div style="display: flex; justify-content:center">
+        <p>dailybugle.com © 2021-2021 The Daily Bugle</p>
+    </div>
+</body>
+
+</html>

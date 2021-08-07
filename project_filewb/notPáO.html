@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Bugle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Math&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/utopia-std" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/styles/custom-style.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/Buoi 4/style.css" />
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            width: 90%
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: inline-block;
+            color: whitesmoke;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            color: gray;
+        }
+
+        #BigDiv {
+            width: 40%;
+            height: 40%;
+            margin-left: 1%
+        }
+
+        .cha {
+            display: flex;
+            justify-content: center;
+            align-items: space-between;
+            margin-left: 6%;
+            margin-right: 6%
+        }
+
+        .cha23 {
+            display: flex;
+            flex-direction: row;
+            margin-left: 5%;
+            margin-right: 6%
+        }
+
+        .item2 {
+            display: flex;
+            padding: 1%;
+            padding-top: 1px;
+            height: 50%;
+            width: 50%
+        }
+
+        .info1 {
+            padding-left: 2%
+        }
+
+        .info2 {
+            padding-right: 2%
+        }
+
+        .chu_thich {
+            width: 60%
+        }
+
+        #footer {
+            display: flex;
+            justify-content: space-around;
+            align-items: space-around;
+            margin-left: 6%;
+            margin-right: 6%
+        }
+
+        .item23 {
+            width: 30%;
+            padding-left: 1%
+        }
+
+        .cha45 {
+            display: flex;
+            flex-direction: row;
+            margin-left: 6%;
+            margin-right: 6%;
+        }
+
+        .small {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .small1 {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+        }
+
+        .small2 {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-left: 5%
+        }
+
+        .left_news {
+            width: 95%;
+            margin-right: 3%
+        }
+
+        .cha67 {
+            display: flex;
+            flex-direction: row;
+            margin-left: 6%;
+            margin-right: 6%;
+        }
+
+        .left {
+            display: flex;
+            flex-direction: row;
+            width: 85%;
+            border: 3px;
+        }
+
+        .right {
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+            height: 50%;
+            padding-left: 1%;
+        }
+
+        .news_at_left {
+            width: 50%;
+            border: 3px;
+            padding-right: 2%
+        }
+
+        .news_at_right {
+            width: 50%;
+            padding-left: 1%;
+            border: 3px;
+        }
+
+        .sn {
+            padding-left: 2%;
+        }
+
+        .sn1 {
+            padding-left: 2%;
+            background-color: whitesmoke;
+            width: 80%
+        }
+
+        .smollCha {
+            display: flex;
+            flex-direction: row;
+            margin-left: 4%;
+            width: 100%
+        }
+
+        .sn2 {
+            padding-left: 2%;
+            padding-right: 2%;
+            width: 100%
+        }
+
+        .info_1 {
+            width: 55%;
+        }
+
+        .lotus {
+            padding-right: 2%
+        }
+
+        .info_2 {
+            width: 50%;
+            padding-left: 2%;
+            padding-right: 2%
+        }
+
+        h1 {
+            font-family: 'Utopia Std', sans-serif;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        h3 {
+            font-family: 'Frank Ruhl Libre', serif;
+        }
+
+        h4 {
+            font-family: 'Frank Ruhl Libre', serif;
+        }
+
+        p {
+            font-family: 'STIX Two Math', serif;
+        }
+
+        a {
+            font-family: 'STIX Two Math', serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="margin-left: 38%; font-size: 55px;">The Daily Bugle</h1>
+    <ul style=" margin-left: 6%">
+        <li><a href="http://127.0.0.1:5500/notPáO.html">Home</a></li>
+        <li><a href="http://127.0.0.1:5500/coronavirus.html">Coronavirus</a></li>
+        <li><a href="http://127.0.0.1:5500/race&reckonin.html">Race & Reckoning</a></li>
+        <li><a href="http://127.0.0.1:5500/investigations.html">Investigations</a></li>
+        <li><a href="http://127.0.0.1:5500/aboutUS.html">About US</a></li>
+    </ul>
+    <br>
+    <br>
+    <div class="cha">
+        <div id="BigDiv" style="margin-right: 1%">
+            <div style=" padding: 2%; padding-top: 1px;">
+                <h2>Biden asks G-7 to take a tougher line on China, but not all allies are enthusiastic</h2>
+                <p>Germany is among the members of the economic club with reservations about confrontation with a major
+                    trading partner.
+                </p>
+                <p style="font-size: 13px;">By Ashley Parker and Anne Gearan</p>
+            </div>
+            <hr style="margin-right: 4%">
+            <div style=" padding: 2%; padding-top: 1px;">
+                <h2>Republican attacks on Biden agenda can’t break through conservative media’s culture wars</h2>
+                <p>Of course, it’s harder to build a message against big government spending after the Trump
+                    administration oversaw a roughly $9 trillion jump in the federal debt, with 2020 spending hitting
+                    new levels to battle the twin health and economic
+                    crises.
+                </p>
+                <p style="font-size: 13px;">By Paul Kane</p>
+            </div>
+            <hr style="margin-right: 4%">
+            <div style=" padding: 2%; padding-top: 1px;">
+                <h2>What meat, clothing and five other everyday items tell us about inflation</h2>
+                <p style="font-size: 13px;">By Abha Bhattarai and Alyssa Fowers</p>
+            </div>
+            <hr style="margin-right: 4%">
+            <div style="margin-right: 3%">
+                <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FDDVVGTWJGAI6XBYIMSMR6KWPFA%252Ejpg&w=232&h=130"
+                    alt="putin">
+                <h2>Putin laughs off ‘killer’ comments ahead of meeting with Biden</h2>
+                <p style="font-size: 13px;">By Antonia Noori Farzan</p>
+            </div>
+        </div>
+        <hr>
+        <div id="BigDiv2">
+            <div style="padding: 2%; padding-top: 1px;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB4u4itW0xjR5gTRGhrqNRIKG40Hg2uhhnlQXqxTd5BaHN9yz8VnJLFKfPwaY_dG4BKDo&usqp=CAU"
+                    alt="meeting" style="width: 500px">
+                <h2>Secret recordings, leaked letters expose backroom dealings and rock the Southern Baptist Convention
+                </h2>
+                <p>On Tuesday, thousands of Southern Baptists will gather in Nashville to vote on issues that will shape
+                    the massive denomination’s future, including the choice of its next president. More than 16,000
+                    people are expected to attend what is
+                    likely the largest religious gathering since the pandemic, as well as the biggest Baptist meeting in
+                    decades.</p>
+                <p style="font-size: 13px;">By Sarah Pulliam Bailey</p>
+            </div>
+            <hr style="margin-left: 2%; margin-right: 2%">
+            <div class="item" style="display: flex; padding: 2%; padding-top: 1px;">
+                <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FHRAH3VFIAII6TBW527YOMA4R5E%252Ejpg&w=232&h=130"
+                    alt="another meeting" style="width: 200px; height: 110px;">
+                <div class="info1">
+                    <h3>Democrats try to ease tensions between ‘the Squad’ and Jewish lawmakers ahead of key month for
+                        party’s agenda</h3>
+                    <p style="font-size: 13px;">By Colby Itkowitz and Marianna Sotomayor</p>
+                </div>
+            </div>
+            <br>
+            <hr style="margin-left: 2%; margin-right: 2%">
+            <div style="padding: 2%; padding-top: 1px;">
+                <h2>U.S., Iran make progress in indirect talks, but as sixth round begins, final agreement still elusive
+                </h2>
+                <p style="font-size: 13px;">By Karen DeYoung</p>
+            </div>
+            <hr style="margin-left: 2%; margin-right: 2%">
+            <div class="item" style="display: flex;padding: 2%; padding-top: 1px;">
+                <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FEGF4ILWLK4I6XBYIMSMR6KWPFA%252Ejpg&w=232&h=130"
+                    alt="boris johnson" style="width: 200px; height: 110px;">
+                <div class="info1">
+                    <h3>Britain’s Boris Johnson takes shots at E.U. leaders as ‘sausage war’ threatens message of unity
+                    </h3>
+                    <p style="font-size: 13px;">By Antonia Noori Farzan and Quentin Aries</p>
+                </div>
+            </div>
+            <br>
+            <hr style="margin-left: 2%; margin-right: 2%">
+            <div class="item" style="display: flex; padding: 2%; padding-top: 1px;">
+                <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2F6652MKWBSAI6XCNEW6XCFKQZHY%252Ejpg&w=232&h=130"
+                    alt="tiktoker" style="width: 200px; height: 110px;">
+                <div class="info1">
+                    <h3>Can astrology make sense of cryptocurrency? Maren Altman and a million TikTok followers think
+                        so.</h3>
+                    <p style="font-size: 13px;">By Travis M. Andrews</p>
+                </div>
+            </div>
+            <br>
+            <hr style="margin-left: 2%; margin-right: 2%">
+            <div class="item" style="display: flex; padding: 2%; padding-top: 1px;">
+                <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FMTNEUGW6PQI6XIT7RMUUSMHJLM%252Ejpg&w=232&h=130"
+                    alt="howard university" style="width: 200px; height: 110px;">
+                <div class="info1">
+                    <h3>Appointments of Nikole Hannah-Jones, Ta-Nehisi Coates signal new era for Howard University</h3>
+                    <p style="font-size: 13px;">By Lauren Lumpkin</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div id="BigDiv" style="margin-left: 1%">
+            <div style="padding-left: 2%; padding-top: 1px;">
+                <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FRAGZP5WLCQI6XBYIMSMR6KWPFA%252Ejpg&w=232&h=130"
+                    alt="teacher">
+                <h2>Teachers nationwide rally to protest restrictions on lessons about racism</h2>
+                <p style="font-size: 13px;">By Valerie Strauss</p>
+            </div>
+            <hr style="margin-left: 4%">
+            <div style="padding-left: 2%; padding-top: 1px;">
+                <h2>School of ‘Remember the Titans’ marks its final graduating class under a segregationist’s name</h2>
+                <p style="font-size: 13px;">By Rachel Weiner</p>
+            </div>
+            <hr style="margin-left: 4%">
+            <div style="padding-left: 2%; padding-top: 1px;">
+                <h2>Leaked letters, recordings rock the Southern Baptist Convention</h2>
+                <p style="font-size: 13px;">By Sarah Pulliam Bailey</p>
+            </div>
+            <hr style="margin-left: 4%">
+            <div style="padding-left: 2%; padding-top: 1px;">
+                <h2>Hotel industry sees new business model emerging from pandemic, possibly with fewer workers</h2>
+                <p>Companies — and travelers — have learned how to get by without amenities such as daily room cleanings
+                    and free breakfasts. The changes could be long-term.</p>
+                <p style="font-size: 13px;">By Eli Rosenberg</p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr style=" margin-left: 6%; margin-right: 6%">
+    <h2 style="margin-left: 6%">Opinions</h2>
+    <div class="cha">
+        <div class="BigDiv1.2" style="display: flex; justify-content: flex-start; align-items: space-around">
+            <div class="item" style="display: flex; padding: 1%; padding-top: 1px; height: 25%; width: 25%">
+                <div class="info2">
+                    <h3>We should rethink how we think about Vice President Harris</h3>
+                    <p style="font-size: 13px;">Opinion by Perry Bacon Jr.</p>
+                </div>
+                <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FBTTHC2OC6FHSZIED4V2UXYEGKU%252Ejpg&w=64&h=64"
+                    alt="Harris" style="width: 150px; height: 80px;">
+            </div>
+            <hr>
+            <div class="item" style="display: flex; padding: 1%; padding-top: 1px; height: 25%; width: 25%">
+                <div class="info2">
+                    <h3>The secret gag orders must stop</h3>
+                    <p style="font-size: 13px;">Opinion by Brad Smith</p>
+                </div>
+                <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FW5PZV3WJMII6XBYIMSMR6KWPFA%252Ejpg&w=64&h=64"
+                    alt="minister" style="width: 80px; height: 80px;">
+            </div>
+            <hr>
+            <div class="item" style="display: flex; padding: 1%; padding-top: 1px; height: 25%; width: 25%">
+                <div class="info2">
+                    <h3>This is the Republicans’ back-up plan in case they can’t suppress enough votes</h3>
+                    <p style="font-size: 13px;">Opinion by Fred Hiatt</p>
+                </div>
+                <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FYM6A24WMOEI6XJ7RKK4IOC7PPQ%252Ejpg&w=64&h=64"
+                    alt="Republican" style="width: 170px; height: 80px;">
+            </div>
+            <hr>
+            <div class="item" style="display: flex; padding: 1%; padding-top: 1px; height: 25%; width: 25%">
+                <div class="info2">
+                    <h3>Merrick Garland has said some fine words. Now he needs to act.</h3>
+                    <p style="font-size: 13px;">Opinion by Jennifer Rubin</p>
+                </div>
+                <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FB7KNLEWK5QI6XBYIMSMR6KWPFA%252Ejpg&w=64&h=64"
+                    alt="Merrick Garland" style="width: 150px; height: 80px;">
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr style=" margin-left: 6%; margin-right: 6%">
+    <h2 style="margin-left: 6%;">Morning Mix</h2>
+    <div class="cha">
+        <div class="item2">
+            <div class="info">
+                <h3>Videos show Ocean City, Md., police Tasering, kneeing teens while enforcing boardwalk vaping ban
+                </h3>
+                <p style="font-size: 13px;">By Julian Mark</p>
+            </div>
+            <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FLPNXALELXVEVPOJWAZEFDTSBXE%252Epng&w=100&h=67"
+                alt="video" style="width: 160px; height: 80px;">
+        </div>
+        <hr>
+        <div class="item2">
+            <div class="info">
+                <h3>A humpback whale swallowed a lobster diver whole and spit him out alive: ‘It tried to eat me’</h3>
+                <p style="font-size: 13px;">By Jaclyn Peiser</p>
+            </div>
+            <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2F2E5IIBG5LJGZFGDM3EOUAI7BNU%252Epng&w=100&h=67"
+                alt="diver" style="width: 150px; height: 80px;">
+        </div>
+        <hr>
+        <div class="item2">
+            <div class="info">
+                <h3>Mexican police found a dismembered woman in an ex-butcher’s basement. He may have killed at least 17
+                    others.</h3>
+                <p style="font-size: 13px;">By Andrea Salcedo</p>
+            </div>
+            <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FSCONH2GL3II6XBYIMSMR6KWPFA%252Ejpg&w=100&h=67"
+                alt="police" style="width: 150px; height: 80px;">
+        </div>
+    </div>
+    <br>
+    <hr style=" margin-left: 6%; margin-right: 6%">
+    <h2 style="margin-left: 6%;">Don't Miss</h2>
+    <div class="cha23">
+        <div class="item23">
+            <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FELSBZPHA3YI6XIT7RMUUSMHJLM%252Ejpg&w=232&h=130"
+                alt="fire">
+            <div class="info2">
+                <h3>Here are 15 of the week’s best photos</h3>
+                <p style="font-size: 13px;">By Washington Post Staff</p>
+            </div>
+        </div>
+
+        <div class="item23">
+            <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FYTD4HTWZI4I6XDEHVVXSPEMMPA%252Ejpg&w=232&h=130"
+                alt="fruit">
+            <div class="info2">
+                <h3>A guide to stone fruit: How to choose, ripen, store and cook it</h3>
+                <p style="font-size: 13px;">By Aaron Hutcherson</p>
+            </div>
+        </div>
+
+        <div class="item23">
+            <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FZ4VTW6TULBHTVLAA2FRIQAYMWE%252Ejpg&w=232&h=130"
+                alt="peacock">
+            <div class="info2">
+                <h3>An ad called for a peacock to be killed ‘by any means necessary.’ Then the bird was shot to death.
+                </h3>
+                <p style="font-size: 13px;">By Marisa Iati</p>
+            </div>
+        </div>
+
+        <div class="item23">
+            <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2F3C6242WD4UI6XCNEW6XCFKQZHY%252Ejpg&w=232&h=130"
+                alt="mean girl">
+            <div class="info2">
+                <h3>When the ‘mean girl’ is a woman: How to deal with an adult bully</h3>
+                <p style="font-size: 13px;">By Cathy Alter</p>
+            </div>
+        </div>
+
+        <div class="item23">
+            <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2F3GPT65GTR4I6XJJ2HNKFB7OKPI%252Ejpg&w=232&h=130"
+                alt="wedding">
+            <div class="info2">
+                <h3>The wedding of a homeless couple — and what happened next</h3>
+                <p style="font-size: 13px;">By Barbara Davidson</p>
+            </div>
+        </div>
+
+        <div class="item23">
+            <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FRTO6WKWS2MI6XM47AWRNO5VR6Q%252Ejpg&w=232&h=130"
+                alt="olympic woman">
+            <div class="info2">
+                <h3>The pandemic postponed the 2020 Olympics. This Maryland rugby player is hopeful for 2021.</h3>
+                <p style="font-size: 13px;">By Tiffany Stanley</p>
+            </div>
+        </div>
+
+        <div class="item23">
+            <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FHEMQSWWS2AI6XJJ2HNKFB7OKPI%252Ejpg&w=232&h=130"
+                alt="baseball man">
+            <div class="info2">
+                <h3>Nationals manager Davey Martinez: ‘There was an emptiness last year’</h3>
+                <p style="font-size: 13px;">By KK Ottesen</p>
+            </div>
+        </div>
+
+        <div class="item23">
+            <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FRIB23RW6SEI6XIT7RMUUSMHJLM%252Ejpg&w=232&h=130"
+                alt="black woman">
+            <div class="info2">
+                <h3>101 Black women on finding beauty in their natural hair</h3>
+                <p style="font-size: 13px;">By Theresa Vargas</p>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript">
+
+        $(".cha23").slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 1000,
+            infinity: true,
+        });
+
+    </script>
+    <br>
+    <hr style=" margin-left: 6%; margin-right: 6%">
+    <h2 style="margin-left: 6%;">Politics</h2>
+    <div class="cha45">
+        <div class="left_news">
+            <div class="small1">
+                <div class="news">
+                    <h1>Biden’s ally in push to upgrade climate change infrastructure? Climate change.</h1>
+                    <p style="font-size: 13px;">By Phillip Bump</p>
+                </div>
+                <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FUAREF7W6LUI6XIT7RMUUSMHJLM%252Ejpg&w=232&h=130"
+                    alt="thermometer" style="width: 70%">
+            </div>
+            <br>
+            <hr>
+            <div class="small">
+                <div class="news2" style="padding-right: 1%">
+                    <h4>The Take</h4>
+                    <h3>Democrats pushing Biden’s agenda face hard bargains with no room for mistakes</h3>
+                    <p style="font-size: 13px;">By Dan Balz</p>
+                </div>
+                <hr>
+                <div class="news2" style="padding-left: 5%">
+                    <h3>As a high-ranking Biden aide pushes Congress to raise inheritance taxes, his brother lobbies
+                        against it</h3>
+                    <p style="font-size: 13px;">By Michael Scherer, Jeff Stein and Sean Sullivan</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="right_news">
+            <h2 style="margin-left: 4%">World</h2>
+            <div class="small2">
+                <div class="news" style="padding-right: 3%">
+                    <h1>Venezuelan standoff leaves more than 20 dead, officials say, as gang violence escalates</h1>
+                    <p style="font-size: 13px;">By María Luisa Paúl</p>
+                </div>
+                <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FDZ4N7RHBCQI6XIT7RMUUSMHJLM%252Ejpg&w=232&h=130"
+                    alt="police">
+            </div>
+            <hr style="margin-left: 4%">
+            <div class="small">
+                <div class="news2" style="padding-left: 4%; padding-right: 3%">
+                    <h4>The Take</h4>
+                    <h3>Democrats pushing Biden’s agenda face hard bargains with no room for mistakes</h3>
+                    <p style="font-size: 13px;">By Dan Balz</p>
+                </div>
+                <hr>
+                <div class="news2" style="padding-left: 2%">
+                    <h3>As a high-ranking Biden aide pushes Congress to raise inheritance taxes, his brother lobbies
+                        against it</h3>
+                    <p style="font-size: 13px;">By Michael Scherer, Jeff Stein and Sean Sullivan</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr style=" margin-left: 6%; margin-right: 6%">
+    <h2 style="margin-left: 6%;">D.C., MD. & VA.</h2>
+    <div class="cha67">
+        <div class="left">
+            <div class="news_at_left">
+                <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2F7PJICUV664I6XA7DBSTQLKLLUQ%252Ejpg&w=496&h=331"
+                    alt="vaccinating">
+                <figcaption>A Maryland National Guard member administers a coronavirus vaccine at CASA’s Wheaton
+                    Welcome Center in May. (Getty Images)</figcaption>
+                <h1>Coronavirus vaccination rates surge in hard-hit Latino community in Montgomery County</h1>
+                <p>The county credits its equity efforts, including a public service announcement featuring a Latina
+                    grandmother encouraging people to get vaccinated.
+                </p>
+                <p style="font-size: 13px;">By Lola Fadulu and Stephanie Lai</p>
+            </div>
+            <hr>
+            <div class="news_at_right">
+                <div class="sn">
+                    <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2F7NCKHUH3WYI6FCPXQWM6H532M4%252Ejpg&w=232&h=130"
+                        alt="britney fan">
+                    <h4>Perspective</h4>
+                    <h2>What ‘Free Britney’ shares with ‘Justice for Jenny’</h2>
+                    <p style="font-size: 13px;">By Theresa Vargas</p>
+                </div>
+                <hr>
+                <br>
+                <div class="sn">
+                    <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FXYMMQ2255VFCRE3HYWXKAJ3JP4%252Ejpg&w=232&h=130"
+                        alt="dog">
+                    <h2>Decriminalization of marijuana is pushing pot-sniffing police dogs into retirement</h2>
+                    <p style="font-size: 13px;">By Peter Hermann and Justin Jouvenal</p>
+                </div>
+            </div>
+        </div>
+        <hr style="margin-left: 2%">
+        <div class="right">
+            <div class="sn1">
+                <h3>Annapolis man charged with murder in shooting of Naval Academy midshipman’s mother</h3>
+                <p style="font-size: 13px;">By Justin Wm. Moyer</p>
+            </div>
+            <hr>
+            <div class="sn1">
+                <h3>Four juveniles arrested in D.C. armed robbery spree were found sleeping in stolen car</h3>
+                <p style="font-size: 13px;">By Peter Hermann</p>
+            </div>
+            <hr>
+            <div class="sn1">
+                <h3>Capital Gazette gunman regretted not killing more people, expert testifies</h3>
+                <p style="font-size: 13px;">By Emily Davies and Katie Mettler</p>
+            </div>
+            <hr>
+            <div class="sn1">
+                <h3>Metrorail will extend service until midnight beginning Sunday</h3>
+                <p style="font-size: 13px;">By Justin George</p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="smollCha">
+        <div class="sn2">
+            <h4>Analysis</h4>
+            <h3>D.C.’s summer heat is near its peak. Up next? The descent toward winter.</h3>
+            <p style="font-size: 13px;">By Ian Livingston</p>
+        </div>
+        <hr>
+        <div class="sn2">
+            <h4>Capital Weather Gang</h4>
+            <h3>D.C.-area forecast: Hot through Friday, and we add in storms over the weekend</h3>
+            <p style="font-size: 13px;">By David Streit</p>
+        </div>
+        <hr>
+        <div style="padding-left: 1%; padding-right: 2%; width: 100%">
+            <img src="https://www.washingtonpost.com/graphics/local/dc-maryland-virginia-coronavirus-cases/img/screenshot/local-trend-charts.png"
+                alt="diagrams" style="width: 80%; height: 90%">
+            <div style="width: 80%">
+                <h3>Known coronavirus deaths and cases per 100,000</h3>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <hr style=" margin-left: 6%; margin-right: 6%">
+    <h3 style="margin-left: 6%;">Politics</h3>
+    <div class="cha45">
+        <div class="lotus" style="display: flex;">
+            <div class="info_1" style="padding-right: 2%">
+                <h2>Kenilworth Aquatic Gardens are in bloom. How to make the most of this hidden gem.</h2>
+                <p>The Lotus and Water Lily festival brings color to the only national park focused on aquatic plants.
+                </p>
+                <p style="font-size: 13px;">By Fritz Hahn</p>
+            </div>
+            <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FYI52KQHDFUI6XCGFJ7LDQLCHZM%252Ejpg&w=232&h=155"
+                alt="lotus" style="width: 50%; height: 60%; padding-left: 2%">
+        </div>
+        <hr style="opacity: 35%;">
+        <div class="info_2">
+            <h2>The best things to do in the D.C. area the week of July 15-21</h2>
+            <p>This weekend features the reopenings of two Smithsonian museums, the launch of the D.C. Asian Pacific
+                American Film Festival, and a party dedicated to D.C.'s official "native cocktail."</p>
+            <p style="font-size: 13px;">By Fritz Hahn and Anying Guo</p>
+        </div>
+        <hr style="opacity: 35%;">
+        <div class="info_2">
+            <h2>6 pop-up restaurants you should try this summer</h2>
+            <p>Offerings include breakfast tacos, salteñas and a best-selling turkey sub.</p>
+            <p style="font-size: 13px;">By Adele Chapin</p>
+        </div>
+    </div>
+    <br>
+    <hr style=" margin-left: 6%; margin-right: 6%">
+    <h2 style="margin-left: 6%">NATIONAL</h2>
+    <div class="cha67">
+        <div style="width: 20%; padding-right: 2%">
+            <h1>St. Louis and L.A. now require masks indoors. With cases rising, will other cities follow suit?</h2>
+                <p>Health officials say the mandates are necessary to combat the delta variant of the coronavirus.</p>
+                <p style="font-size: 13px;">By Derek Hawkins</p>
+        </div>
+        <hr style="opacity: 50%">
+        <div style="width: 80%; padding-left: 2%; display: flex; flex-direction: row;">
+            <div>
+                <h4>James Polk</h4>
+                <h2>Pulitzer Prize winner for Watergate reporting at the old Washington Star dies at 83</h2>
+                <p>He worked for the Star and later for NBC and CNN.</p>
+                <p style="font-size: 13px;">By Matt Schudel</p>
+            </div>
+            <div>
+                <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https%3A%2F%2Farc-anglerfish-washpost-prod-washpost%252Es3%252Eamazonaws%252Ecom%2Fpublic%2FDUTM2EHMXEI6XIV2HPRR2NESLA%252Ejpg&w=364&h=204"
+                    alt="James Polk">
+                <figcaption>(Family photo)</figcaption>
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr style="opacity: 50%; margin-left: 6%; margin-right: 6%">
+    <div class="cha67">
+        <div>
+            <h4>Perspective</h4>
+            <h2>Critical race theory or not, let’s tap into all students’ potential</h2>
+            <p style="font-size: 13px;">By Jay Mathews</p>
+        </div>
+        <hr style="opacity: 50%">
+        <div style="padding-left: 2%">
+            <h2>DOJ declines to investigate Cuomo’s handling of covid-19 in nursing homes</h2>
+            <p style="font-size: 13px;">By Max Hauptman</p>
+        </div>
+    </div>
+    <hr style=" margin-left: 6%; margin-right: 6%">
+    <div id="footer" style=" display: flex; justify-content: space-around; align-items: space-around">
+        <div>
+            <h4>About Us</h4>
+            <p>Public Relations</p>
+            <p>Careers</p>
+            <p>Diversity & Inclusion</p>
+            <p>Newspaper in Education</p>
+            <p>Today's Paper</p>
+            <p>WP Creative Group</p>
+            <p>Events</p>
+            <p>Policies & Standards</p>
+        </div>
+        <div>
+            <h4>Get The Post</h4>
+            <p>Home Delivery</p>
+            <p>Digital Subscription</p>
+            <p>Gift Subscriptions</p>
+            <p>Mobile & Apps</p>
+            <p>Newsletters & Alerts</p>
+            <p>Daily Bugle Live</p>
+            <p>Reprints & Permissions</p>
+            <p>Post Store</p>
+            <p>Books & eBooks</p>
+            <p>e-Replica</p>
+        </div>
+        <div>
+            <h4>Help</h4>
+            <p>Contact the Newsroom</p>
+            <p>Contact Customer Care</p>
+            <p>Reader Representative</p>
+            <p>Advertise</p>
+            <p>Licensing & Syndication</p>
+            <p>Request a Correction</p>
+            <p>Send a News Tip</p>
+            <p>Report a Vulnerability</p>
+        </div>
+        <div>
+            <h4>Terms of Use</h4>
+            <p>Digital Products Terms of Sal</p>
+            <p>Print Products Terms of Sale</p>
+            <p>Terms of Service</p>
+            <p>Privacy Policy</p>
+            <p>Submissions & Discussion Policy</p>
+            <p>RSS Terms of Service</p>
+            <p>Ad Choices</p>
+        </div>
+    </div>
+    <hr>
+    <div style="display: flex; justify-content:center">
+        <p>dailybugle.com © 2021-2021 The Daily Bugle</p>
+    </div>
+
+</body>
+
+</html>
