@@ -313,3 +313,106 @@ p.title{
     margin-top: 13px;
     display: block;
 }
+.p_7{
+    background-color: whitesmoke;
+}
+.p_7 .top .title {
+    color: black;
+    text-transform: uppercase;
+    font-size: 400;
+    margin: 0px auto auto auto;
+    width: 41%;
+    letter-spacing: 2px;
+    font-weight: 100;
+    padding-top: 30px;
+}
+.p_7 .title::after {
+    content: " ";
+    width: 15%;
+    height: 2px;
+    background-color: #e67e22;
+    display: block;
+    margin: 30px auto;
+}
+
+.p_7 .parts {
+    background-color: white;
+    border:3px solid #E1E1E1;
+    width: 28%;
+    margin-bottom: 100px;
+}
+.p_7 .parts #top{
+    background-color: #fdffff;
+    overflow: hidden;
+    width:100%;
+    border-bottom:1px solid #E1E1E1;
+}
+.p_7 .parts #top p:nth-child(1){
+    font-weight: 300;
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 22px;
+    color: #555;
+}
+
+.p_7 .parts #top  p:nth-child(2){
+    font-weight: 100;
+    padding-left: 5px;
+    text-transform: uppercase;
+    font-size: 60px;
+    color: #e67e22
+}
+
+.p_7 .parts #top  p:nth-child(2)::after{
+    content: "/month";
+    font-size: 19px;
+    text-transform: none;
+    font-weight: 300;
+}
+.p_7 .parts #top  p:nth-child(3){
+    font-weight: 300;
+    padding: 10px;
+    font-size: 19px;
+    color: #555
+}
+.p_7 .parts #mid {
+    padding-bottom: 8%
+}
+.p_7 .parts #mid  p:nth-child(1){
+    color: #555;
+    padding: 20px 0 5px 15px ;
+    font-weight: 300;
+    font-size: 20px;
+}
+.p_7 .parts #mid  p{
+    color: #555;
+    padding:10px 0 0 15px;
+    font-weight: 300;
+    font-size: 20px;
+}
+.p_7.parts #mid  p:nth-child(4){
+    color: #555;
+    padding: 10px 0 20px 15px ;
+    font-weight: 300;
+    font-size: 20px;
+}
+.p_7 .parts #mid  i{
+    color: #e67e22;
+    padding-right: 8px;
+    font-weight: 300;
+    font-size: 13px;
+}
+.p_7 .parts #bot{
+    border-top:3px solid #E1E1E1;
+    height: 80px;
+}
+.p_7 .parts #bot a{
+    border: 2px solid #e67e22;
+    padding: 10px 17px;
+    border-radius: 20px;
+    font-weight: 300;
+    background: #e67e22;
+    display: block;
+    text-align: center;
+    margin: 15px 70px
+}
