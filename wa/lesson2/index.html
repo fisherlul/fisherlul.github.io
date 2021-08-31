@@ -8,13 +8,16 @@
     <title>Omnifood</title>
     <link rel="shortcut icon" href="./img/logo-white.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hover.css">
+    <link rel="stylesheet" href="form.css">
     <link href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
+
 <body>
     <section class="p_1">
-        <nav>
+        <nav class="shift">
             <div class="logo">
                 <img src="./img/logo-white.png" alt="">
             </div>
@@ -34,11 +37,12 @@
     </section>
     <section class="p_2">
         <div class="top">
-            <p class="title">Get food fast - Not fast food</p>
+            <p class="title">Get food fast — Not fast food</p>
             <p class="info">Hello, we’re Omnifood, your new premium food delivery service. We know you’re always busy.
                 No time for cooking. So let us take care of that, we’re really good at it, we promise!</p>
         </div>
-        <div class="list" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="200">
+        <div class="list" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="200"
+            data-aos-anchor-placement="top-bottom">
             <div class="para">
                 <p><i class="fal fa-infinity"></i></p>
                 <p>Up to 365 days/year</p>
@@ -123,8 +127,7 @@
         <div class="top">
             <h2 class="title">We're currently in these cities</h2>
         </div>
-        <div class="cities" data-aos="fade-up"
-        data-aos-duration="1000">
+        <div class="cities" data-aos="fade-up" data-aos-duration="1000">
             <div class="city">
                 <img src="./img/lisbon-3.jpg" alt="Lisbons">
                 <h3>Lisbon</h3>
@@ -206,7 +209,7 @@
             </div>
             <div class="comment">
                 <i>Inexpensive, healthy and great-tasting meals, delivered right to my home. We have lots of food
-                    delivery here in Lisbon, but no one comes even close to Omifood. Me and my family are so in
+                    delivery here in Lisbon, but no one comes even close to Omnifood. Me and my family are so in
                     love!</i>
                 <div class="image">
                     <img src="./img/customer-2.jpg" alt="">
@@ -279,6 +282,66 @@
             </div>
         </div>
     </section>
+    <section class="p_8">
+        <div class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100940.17073743168!2d-122.50764016446877!3d37.757679275525774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20California%2C%20Hoa%20K%E1%BB%B3!5e0!3m2!1svi!2s!4v1630389964723!5m2!1svi!2s"
+                width="1050" height="670" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="register_form">
+            <form>
+                <div class="container">
+                    <p class="welcome">We're happy to hear from you</p>
+                    <hr class="after_welcome">
+
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+
+                    <label for="psw-repeat"><b>Repeat Password</b></label>
+                    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+                    <hr>
+
+                    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+                    <button type="submit" class="registerbtn">Register</button>
+                </div>
+
+                <div class="container signin">
+                    <p>Already have an account? <a href="#">Sign in</a>.</p>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div class="row">
+            <div class="col span-1-of-2">
+                <ul class="footer-nav">
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">iOS App</a></li>
+                    <li><a href="#">Android App</a></li>
+                </ul>
+            </div>
+            <div class="col span-1-of-2">
+                <ul class="social-links">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <p>
+                Copyright &copy; 2015 by Omnifood. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
