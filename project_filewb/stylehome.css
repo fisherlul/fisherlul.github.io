@@ -1,0 +1,208 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+    width: 90%
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: inline-block;
+    color: whitesmoke;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+
+#BigDiv {
+    width: 40%;
+    height: 40%;
+    margin-left: 1%
+}
+
+.cha {
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
+    margin-left: 6%;
+    margin-right: 6%
+}
+
+.cha23 {
+    display: flex;
+    flex-direction: row;
+    margin-left: 5%;
+    margin-right: 6%
+}
+
+.item2 {
+    display: flex;
+    padding: 1%;
+    padding-top: 1px;
+    height: 50%;
+    width: 50%
+}
+
+.info1 {
+    padding-left: 2%
+}
+
+.info2 {
+    padding-right: 2%
+}
+
+.chu_thich {
+    width: 60%
+}
+
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 6%;
+
+    font-family: 'STIX Two Math', serif;
+    font-weight: 100
+}
+
+.item23 {
+    width: 30%;
+    padding-left: 1%
+}
+
+.cha45 {
+    display: flex;
+    flex-direction: row;
+    margin-left: 6%;
+
+}
+
+.small {
+    display: flex;
+    flex-direction: row;
+}
+
+.small1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.small2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 5%
+}
+
+.left_news {
+    width: 95%;
+    margin-right: 3%
+}
+
+.cha67 {
+    display: flex;
+    flex-direction: row;
+    margin-left: 6%;
+    margin-right: 6%;
+}
+
+.left {
+    display: flex;
+    flex-direction: row;
+    width: 85%;
+    border: 3px;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 50%;
+    padding-left: 1%;
+}
+.right_news {
+    width: 40%;
+    margin-right: 8%
+}
+.left_news {
+    width: 40%
+}
+.news_at_left {
+    width: 50%;
+    border: 3px;
+    padding-right: 2%
+}
+
+.news_at_right {
+    width: 50%;
+    padding-left: 1%;
+    border: 3px;
+}
+
+.sn {
+    padding-left: 2%;
+}
+
+.sn1 {
+    padding-left: 2%;
+    background-color: whitesmoke;
+    width: 80%
+}
+
+.smollCha {
+    display: flex;
+    flex-direction: row;
+    margin-left: 4%;
+    width: 100%
+}
+
+.sn2 {
+    padding-left: 2%;
+    padding-right: 2%;
+    width: 100%
+}
+
+.info_1 {
+    width: 55%;
+}
+
+.lotus {
+    padding-right: 2%
+}
+
+.info_2 {
+    width: 50%;
+    padding-left: 2%;
+    padding-right: 2%
+}
+
+h1 {
+    font-family: 'Utopia Std', sans-serif;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+}
+
+h3 {
+    font-family: 'Frank Ruhl Libre', serif;
+}
+
+h4 {
+    font-family: 'Frank Ruhl Libre', serif;
+}
+
+p {
+    font-family: 'STIX Two Math', serif;
+}
+
+a {
+    font-family: 'STIX Two Math', serif;
+}
