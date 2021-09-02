@@ -75,13 +75,18 @@ li a {
     padding-left: 1%
 }
 
-.cha45 {
+.politics {
     display: flex;
     flex-direction: row;
     margin-left: 6%;
 
 }
-
+.politics_span_1-of-2 {
+    width: 90%;
+    padding-left: 4%; 
+    display: flex; 
+    flex-direction: row;
+}
 .small {
     display: flex;
     flex-direction: row;
@@ -106,7 +111,7 @@ li a {
     margin-right: 3%
 }
 
-.cha67 {
+.national {
     display: flex;
     flex-direction: row;
     margin-left: 6%;
