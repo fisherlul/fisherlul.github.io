@@ -29,9 +29,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="stylehome.css">
     <link rel="stylesheet" href="navhover.css">
-    <style>
-
-    </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./minigames.css">
+    <link href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css" rel="stylesheet">
 </head>
 
 <body>
@@ -42,7 +42,8 @@
         <li><a href="http://127.0.0.1:5500/project_filewb/race&reckonin.html">Race & Reckoning</a></li>
         <li><a href="http://127.0.0.1:5500/project_filewb/investigations.html">Investigations</a></li>
         <li><a href="http://127.0.0.1:5500/project_filewb/aboutUS.html">About US</a></li>
-        <li style ="padding-left: 23%;"><a href="http://127.0.0.1:5500/project_filewb/form.html?#">Sign In or Sign Up</a></li>
+        <li style="padding-left: 23%;"><a href="http://127.0.0.1:5500/project_filewb/form.html?#">Sign In or Sign Up</a>
+        </li>
     </ul>
     <br>
     <br>
@@ -551,6 +552,39 @@
         </div>
     </div>
     <hr style=" margin-left: 6%; margin-right: 6%">
+    <nav class="minigames">
+        <ul class="bar">
+            <li class="games">
+                <span><i class="far fa-comment-alt"></i></span>
+                <span><a class="icon" href="#">Comics</a></span>
+            </li>
+            <li class="games">
+                <span><i class="fas fa-tv-retro"></i></i></span>
+                <span><a style="font-size: 12px" class="icon" href="#">TV Listing</a></span>
+            </li>
+            <li class="games">
+                <span><i class="fal fa-cube"></i></span>
+                <span><a class="icon" href="#">Mah Jongg</a></span>
+            </li>
+            <li class="games">
+                <span><i class="fal fa-table"></i></span>
+                <span><a class="icon" href="#">Sudoku</a></span>
+            </li>
+            <li class="games">
+                <span><i class="fal fa-file-word"></i></span>
+                <span><a class="icon" href="#">Wordpipe</a></span>
+            </li>
+            <li class="games">
+                <span><i class="fad fa-telescope"></i></span>
+                <span><a style="font-size: 12px" class="icon" href="#">Horoscopes</a></span>
+            </li>
+            <li class="games">
+                <span><i class="fal fa-spade"></i></span>
+                <span><a class="icon" href="#">Solitaire</a></span>
+            </li>
+        </ul>
+    </nav>
+    <br>
     <div class="footer">
         <div>
             <h4>About Us</h4>
@@ -603,6 +637,9 @@
         <p>dailybugle.com © 2021-2021 The Daily Bugle</p>
     </div>
 
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
