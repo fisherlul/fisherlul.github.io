@@ -1,15 +1,17 @@
-localStorage.clear();
+let formSignup = document.getElementById("formSignup");
 
-// var email = document.getElementById("email");
-// var password = document.getElementById("password");
-// var cfpassword = document.getElementById("cfpassword");
-
-function Submit() {
-    var email = document.getElementById("email");
-    var password = document.getElementById("password");
-    var cfpassword = document.getElementById("cfpassword");
+formSignup.onsubmit = function(e) {
+    e.preventDefault();
+    
+    let email = document.getElementById("email");
+    let password = document.getElementById("password");
+    let cfpassword = document.getElementById("cfpassword");
 
     localStorage.setItem("email", email.value);
     localStorage.setItem("password", password.value);
-    localStorage.setItem("cfpassword", cfpassword.value)
+    localStorage.setItem("cfpassword", cfpassword.value);
+
+    if(password != cfpassword){
+        alert("Password not matched.")
+    }
 }

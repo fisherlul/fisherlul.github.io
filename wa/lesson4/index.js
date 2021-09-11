@@ -59,3 +59,19 @@ function daySet() {
     }
 }
 daySet(n)
+
+// Chữa bài 1: 
+
+function factorial(n) {
+    let n = 8   // số ban đầu
+    let result = 0   // biến lưu kết quả
+    for(let i = 1; i<= n; i++){
+        result = result * i
+        /* 1*1
+           1*1*2
+           1*1*2*3
+           .....  */
+    }
+    console.log(result);
+}
+factorial(5)
