@@ -45,5 +45,5 @@ function setTextError(query, content) {
 }
 
 function Redirect() {
-    window.location = "fisherlul.github.io/wa/lesson6/btvn/main.html";
+    window.location = "https://github.com/fisherlul/fisherlul.github.io/blob/9cede36e3808900dd490c957006b7459d153c9a3/wa/lesson6/btvn/main.html";
 }
