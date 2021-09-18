@@ -43,7 +43,3 @@ formSignup.onsubmit = function (e) {
 function setTextError(query, content) {
     document.querySelector(query).innerHTML = content;
 }
-
-function Redirect() {
-    location.replace("wa/lesson6/btvn/main.html");
-}
