@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="./signinform.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+</head>
+<style>
+    .form-text {
+        color: red;
+        font-style: italic;
+    }
+</style>
+
+<body>
+
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <p style="margin-top: 10px; font-family: 'Noto Serif', serif; font-size: 28px">SIGNINFORM</p>
+            </div>
+
+            <!-- Login Form -->
+            <form id="formSignup">
+                <input type="email" id="email" class="fadeIn second" name="login" placeholder="put your email here">
+                <small id="emailError" class="form-text text-error erMsg"></small>
+                <input type="password" id="password" class="fadeIn third" name="login" placeholder="and the password">
+                <small id="passwordError" class="form-text text-error erMsg"></small>
+                <input type="submit" class="fadeIn fourth" value="Log In" onclick="Redirect();">
+            </form>
+        </div>
+    </div>
+
+    <script src="./signinform.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+
+</html>
