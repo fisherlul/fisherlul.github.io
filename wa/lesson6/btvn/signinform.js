@@ -1,6 +1,10 @@
 let formSignup = document.getElementById("formSignup");
 
-let userList = JSON.parse(localStorage.getItem("user"))
+let users = localStorage.getItem("user")
+let usersList = []
+if(users){
+  usersList = JSON.parse(localStorage.getItem("user"))
+}
 
 formSignup.onsubmit = function (e) {
     e.preventDefault();
@@ -10,9 +14,6 @@ formSignup.onsubmit = function (e) {
 
     let email = formSignup.email.value;
     let password = formSignup.password.value;
-
-    localStorage.setItem("email", email);
-    localStorage.setItem("password", password);
 
     let validate = true;
 
@@ -34,8 +35,9 @@ formSignup.onsubmit = function (e) {
             email: email,
             password: password,
         }
-        userList.push(user);
-        localStorage.setItem("user", JSON.stringify(userList));
+        usersList.push(user);
+        localStorage.setItem("user", JSON.stringify(usersList));
+        window.open("./index.html", "_self")
     }
 
 };
@@ -43,3 +45,4 @@ formSignup.onsubmit = function (e) {
 function setTextError(query, content) {
     document.querySelector(query).innerHTML = content;
 }
+

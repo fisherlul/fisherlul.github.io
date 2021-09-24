@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- in ra các số nguyên tố từ 1 - 200 -->
+    <!-- <script>
+        for (let i = 2; i < 200; i++) {
+            for (let j = 2; j * j <= i; j++) {
+                if (i % j == 0) {
+                    break
+                } else if (j + 1 > Math.sqrt(i)) {
+                    console.log(i + " là số nguyên tố")
+                }
+            }
+        }
+    </script> -->
+    <div id="test" onclick="changeBackground()"></div>
+    <script>
+        document.getElementById("test").innerHTML = "hi this is another div!";
+
+        function changeBackground() {
+            document.getElementById("test").style.backgroundColor = "blue"
+            document.getElementById("test").style.padding = "30px"
+        }
+    </script>
+</body>
+
+</html>

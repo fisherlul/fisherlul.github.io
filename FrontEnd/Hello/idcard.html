@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AboutMe</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        h1 {
+            margin-left: 450px;
+        }
+
+        #presentation {
+            width: 360px;
+            border-color: rgb(143, 15, 143);
+            box-sizing: border-box;
+            border: solid blueviolet;
+        }
+
+        img {
+            padding-left: 39px;
+        }
+        #informations {
+            width: 360px;
+        }
+        .testClass {
+            background-color: violet;
+            margin-left: 490px;
+        }
+        .nav-bar {
+            position: fixed; width: 100%; background-color: violet;
+            display: flex;
+            justify-content: space-around;
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+    <h1 >Welcome to my first website.</h1>
+    <div class="nav-bar" >
+        <a href="#">About Me</a>
+        <a href="#">News of Ams</a>
+        <a href="#">My Class</a>
+        <a href="#">Stuff</a>
+        <a href="#">Chess</a>
+    </div>
+    <br>
+    <br>
+    <div id="presentation" class="testClass">
+        <img src="data:image/jpeg;base64,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"
+            alt="anh cua toi">
+        <br>
+        <b><span>I'm</span> Ditsto (or Ditto, whatever.)</p>
+            <p>Meet me at:</p>
+            <a href=" https://www.chess.com/member/ditsto " target="_blank"> Ditsto Plays Chess </a>
+    </div>
+    <br>
+    <div id="informations" class="testClass">
+        <h4><span>Name:</span></h4>
+        <p><span>Class:</span> 10P2</p>
+        <p><span>School:</span> Hanoi-Amsterdam</p>
+    </div>
+</body>
+
+</html>

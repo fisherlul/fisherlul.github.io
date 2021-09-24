@@ -1,8 +1,12 @@
 let formSignup = document.getElementById("formSignup");
 
-let userList = JSON.parse(localStorage.getItem("user"))
+let users = localStorage.getItem("user")
+let usersList = [] //trống
+if(users){
+  usersList = JSON.parse(localStorage.getItem("user"))
+}
 
-formSignup.onsubmit = function (e) {
+formSignup.onsubmit = function (e) { // function báo lỗi
     e.preventDefault();
 
     setTextError("#emailError", "");
@@ -12,10 +16,6 @@ formSignup.onsubmit = function (e) {
     let email = formSignup.email.value;
     let password = formSignup.password.value;
     let cfpassword = formSignup.cfpassword.value;
-
-    localStorage.setItem("email", email);
-    localStorage.setItem("password", password);
-    localStorage.setItem("cfpassword", cfpassword);
 
     let validate = true;
 
@@ -41,8 +41,8 @@ formSignup.onsubmit = function (e) {
             email: email,
             password: password,
         }
-        userList.push(user);
-        localStorage.setItem("user", JSON.stringify(userList));
+        usersList.push(user);
+        localStorage.setItem("user", JSON.stringify(usersList));
     }
 
 };
