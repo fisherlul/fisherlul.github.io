@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+	border-radius: 20px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+	background-color: #222831;
+    margin-bottom: 50px
+}
+

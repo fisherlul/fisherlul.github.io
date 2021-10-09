@@ -1,0 +1,32 @@
+*{
+    box-sizing:   ;
+    border-box:  ;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --heading: 'Oswald', sans-serif;
+}
+
+body{
+    font-family: 'Oswald', sans-serif;
+}
+
+img{
+    width: 100%;
+}
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color:black
+}
+
+hr{
+    width: 95vw;
+    margin: 0 auto;
+}
+
