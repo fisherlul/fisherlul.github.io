@@ -87,7 +87,7 @@ hr{
     text-decoration: underline;
 }
 
-/* social -icons */
+/* social-icons */
 
 .social-icons{
     display: none;
@@ -328,13 +328,6 @@ main a:hover{
 .main-container-right article div{
     margin-right: 10px;
 }
-
-
-
-
-
-
-
 
 @media(max-width: 460px){
     .hot-topic-content h2{
