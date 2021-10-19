@@ -18,5 +18,17 @@ btnTime.addEventListener('click', function(){
         btnHam.style.display = "block";
         navBar.classList.remove("show-nav");
     }
-})
+});
+;
 
+let getDataNews = async ()=>{
+    let draw = await fetch('https://vnexpress.net/microservice/home')
+    let data = await draw.data
+}
+
+let getDataInfo = async ()=>{
+    let draw = await fetch('https://vnexpress.net/microservice/home')
+    let data = await draw.data
+}
+
+getData()
