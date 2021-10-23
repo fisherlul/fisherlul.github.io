@@ -14,7 +14,4 @@
 
 #######################
 
-a = float(input("Nhập chiều dài a: "))
-b = float(input("Nhập chiều rộng b: "))
-s = a*b
-print("Diện tích hình chữ nhật là: ", s)
+x=10; y=20; print('x+y')

@@ -1,43 +1,34 @@
 
 
-const btnHam = document.querySelector('.ham-btn');
-const btnTime = document.querySelector('.time-btn');
-const navBar = document.getElementById('nav-bar');
-
-btnHam.addEventListener('click', function(){
-    if(btnHam.className !== ""){
-        btnHam.style.display  = "none";
-        btnTime.style.display = "block";
-        navBar.classList.add("show-nav");
+let getDataNews = async () => {
+    try {
+        const response = await axios.get(
+            "https://vnexpress.net/microservice/home"
+        );
+        let data = await response.data;
+        console.log(data);
+        renderDataNews(mixData(data.data, 1), "#main-news")
+        renderDataNews(mixData(data.data, 4), "#side-news")
+        renderJustIn(mixData(data.data, 4))
+        renderHotNews(mixData(data.data, 4))
+    } catch (error) {
+        console.error(error);
     }
-})
 
-btnTime.addEventListener('click', function(){
-    if(btnHam.className !== ""){
-        this.style.display = "none";
-        btnHam.style.display = "block";
-        navBar.classList.remove("show-nav");
-    }
-});
-;
-
-let getDataNews = async ()=>{
-    let draw = await fetch('https://vnexpress.net/microservice/home');
-    let data = await draw.data;
-
-    renderDataNews(mixData(data.data))
+    // renderDataNews(mixData(data.data))
 };
+getDataNews()
 
 // let getDataInfo = async ()=>{
 //     let draw = await fetch('https://vnexpress.net/microservice/home')
 //     let data = await draw.data
 // }
-let mixData = (data)=>{
+let mixData = (data, l) => {
     let newData = []
     let keyData = ["1001002", "1001005", "1001006", "1001007", "1001009", "1001011"]
-    for(let i= 0; i< 10; i++){
+    for (let i = 0; i < l; i++) {
         let topicIndex = keyData[getRandomInt(0, keyData.length)]
-        let newsIndex = getRandomInt(0, 7) 
+        let newsIndex = getRandomInt(0, 7)
 
         newData.push(data[topicIndex].data[newsIndex])
     }
@@ -45,27 +36,59 @@ let mixData = (data)=>{
     return newData
 }
 
-let renderDataNews = (data)=>{
-    let dom= document.querySelector("#a")
-    dom.innerHTML = "";
-    for(let i=0; i<data.length; i++){
+let renderDataNews = (data, query) => {
+    let domSide = document.querySelector(query)
+    domSide.innerHTML = "";
+    for (let i = 0; i < data.length; i++) {
         let html = `<article>
-        <img src = "images/bottom-left-2.jpg">
+        <img src = "${data[i].thumbnail_url}">
         <div>
-            <h3>iPad Pro, reviewed: Has the iPad become my main computer now?</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi iure modi animi cupiditate. Explicabo, nihil?</p>
-
+            <h3>${data[i].title}</h3>
+            <p>${data[i].lead}</p>
             <a href = "#">Read More <span>>></span></a>
         </div>
     </article>`
 
-    dom.innerHTML += html;
+        domSide.innerHTML += html;
     }
 };
-getDataNews();
+
+let renderJustIn = (data, query) => {
+    let domJustIn = document.querySelector("#just-in")
+    domJustIn.innerHTML = "";
+    for (let i = 0; i < data.length; i++) {
+        let html = `<article>
+        <h4>just in</h4>
+        <div>
+            <h2>${data[i].title}</h2>
+            <p>${data[i].lead}</p>
+            <a href = "#">Read More <span>>></span></a>
+        </div>
+        <img src = "${data[i].thumbnail_url}">
+    </article>`
+
+        domJustIn.innerHTML += html;
+    }
+}
+
+let renderHotNews = (data) => {
+    let domHotNews = document.querySelector("#hot-news")
+    domHotNews.innerHTML = "";
+    for (let i = 0; i < data.length; i++) {
+        let html = ` <div class="hot-topic">
+        <img src = "${data[i].thumbnail_url}">
+        <div class="hot-topic-content">
+            <h1>${data[i].title}</h1>
+            <p>${data[i].lead}</p>
+            <a href="#">Read more..</a>
+        </div>
+    </div>`
+        domHotNews.innerHTML += html;
+    }
+}
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
-  }
+    return Math.floor(Math.random() * (max - min) + min);
+}
