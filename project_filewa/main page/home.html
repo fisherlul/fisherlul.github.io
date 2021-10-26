@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="./main.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
+    <!-- fontawesome -->
+    <link href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css" rel="stylesheet">
+    <!-- weather-->
+    <link rel="stylesheet" href="../weather/weather.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="navigation-container">
+            <div class="top-head">
+                <div class="web-name">
+                    <h1>DAILY BUGLE</h1>
+                </div>
+
+                <div class="ham-btn">
+                    <span>
+                        <i class="fas fa-bars"></i>
+                    </span>
+                </div>
+
+                <div class="times-btn">
+                    <span>
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- nav bar -->
+
+            <div class="nav-bar" id="nav-bar">
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">weather</a></li>
+                        <li><a href="#">archive</a></li>
+                        <li><a href="#">featured</a></li>
+                        <li><a href="#">broadcast</a></li>
+                        <li><a href="#">category</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!--social icons -->
+            <div class="social-icons">
+                <ul>
+                    <li>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="banner">
+        <div class="banner-main-content">
+            <h2>GET WORLD'S LATEST NEWS</h2>
+            <h3>World's leading news portal</h3>
+
+            <button>
+                <a href="#">Know more</a>
+            </button>
+
+            <div class="current-news-head">
+                <h3>Biden asks G-7 to take a tougher line on China, but not all allies are enthusiastic <span>By Ashley
+                        Parker and Anne Gearan</span></h3>
+
+                <h3>Republican attacks on Biden agenda can’t break through conservative media’s culture wars <span>By
+                        Paul Kane</span></h3>
+
+                <h3>What meat, clothing and five other everyday items tell us about inflation <span>By Abha Bhattarai
+                        and Alyssa Fowers</span></h3>
+
+                <h3>Putin laughs off ‘killer’ comments ahead of meeting with Biden <span>By Antonia Noori Farzan</span>
+                </h3>
+            </div>
+        </div>
+
+        <div id="hot-news" class="banner-sub-content">
+
+
+
+        </div>
+    </section>
+    <hr>
+
+    <main>
+        <section class="main-container-left">
+            <h2>Top Stories</h2>
+            <div id="main-news" class="container-top-left">
+
+            </div>
+
+            <div id="side-news" class="container-bottom-left">
+
+            </div>
+        </section>
+
+        <section class="main-container-right">
+            <h2>Latest Stories</h2>
+            <div id="just-in">
+
+            </div>
+            <div class="weather">
+                <section class="top-banner">
+                    <div class="container">
+                        <h1 class="weather_title">World Weather</h1>
+                        <form>
+                            <input type="text" placeholder="Search for a city" autofocus>
+                            <button type="submit">SUBMIT</button>
+                            <span class="msg"></span>
+                        </form>
+                    </div>
+                </section>
+                <section class="ajax-section">
+                    <div class="container">
+                        <ul class="cities"></ul>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <nav class="minigames">
+        <ul class="bar">
+            <li class="games">
+                <span><i class="far fa-comment-alt"></i></span>
+                <span><a class="icon" href="#">Comics</a></span>
+            </li>
+            <li class="games">
+                <span><i class="fas fa-tv-retro"></i></i></span>
+                <span><a style="font-size: 12px" class="icon" href="#">TV Listing</a></span>
+            </li>
+            <li class="games">
+                <span><i class="fal fa-cube"></i></span>
+                <span><a class="icon" href="#">Mah Jongg</a></span>
+            </li>
+            <li class="games">
+                <span><i class="fal fa-table"></i></span>
+                <span><a class="icon" href="#">Sudoku</a></span>
+            </li>
+            <li class="games">
+                <span><i class="fal fa-file-word"></i></span>
+                <span><a class="icon" href="#">Wordpipe</a></span>
+            </li>
+            <li class="games">
+                <span><i class="fad fa-telescope"></i></span>
+                <span><a style="font-size: 12px" class="icon" href="#">Horoscopes</a></span>
+            </li>
+        </ul>
+    </nav>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <h2>DAILY BUGLE</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur molestias aut blanditiis totam
+                    quia enim, autem tenetur cum facere, fugit beatae at voluptas ipsum perferendis!</p>
+            </div>
+
+            <div class="footer-right">
+                <h2>Newsletter</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident, autem!</p>
+
+                <div>
+                    <input type="text" placeholder="Email Address">
+                    <i class="fas fa-envelope"></i>
+                </div>
+            </div>
+        </div>
+
+
+        <p>Copyright &copy; dailybugle.com, 2021-2021 The Daily Bugle</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script scr="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    <script src="./main.js"></script>
+    <script src="../weather/weather.js"></script>
+</body>
+
+</html>
