@@ -9,13 +9,12 @@
   }
   
   .weather {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-weight: normal;
     box-shadow: rgb(0 0 0 / 30%) 0px 0px 7px 0px;
     background: rgb(65,131,190);
     background: linear-gradient(90deg, rgba(65,131,190,1) 24%, rgba(0,212,255,1) 100%);
+    padding-bottom: 11px;
   }
   
   .weather a {

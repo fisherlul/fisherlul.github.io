@@ -16,7 +16,7 @@ domSignin.onsubmit = function (e) {
     for (let i = 0; i < usersList.length; i++) {
         if (usersList[i].email == email) {
             if (usersList[i].password == password) {
-                window.open("../home.html", "_self")
+                window.open("../main page/home.html", "_self")
             } else {
                 console.log("Wrong Password!")
             }
@@ -80,7 +80,8 @@ formSignup.onsubmit = function (e) {
         }
         usersList.push(user);
         localStorage.setItem("user", JSON.stringify(usersList));
-        sweetAlert("success", "Sign Up Successfully")
+        sweetAlert("success", "Sign Up Successfully");
+        window.open("../main page/home.html", "_self")
     }
 
 };
