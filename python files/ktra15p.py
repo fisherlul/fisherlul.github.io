@@ -6,9 +6,6 @@ for i in range (0,n):
 print(B)
 
 print("Phần tử lớn nhất của dãy là:", max(B))
+
 print("Phần tử nhỏ nhất của dãy là:", min(B))
-chiso = []
-for i in range (n):
-    if B[i] == min (B):
-        chiso += [i]
-print ("Chỉ số nhỏ nhất của nó là", min(chiso))
+print ("Chỉ số nhỏ nhất của nó là", B.index(min(B)))
