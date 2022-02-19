@@ -25,4 +25,4 @@ for i in range (0,10):
 # BÀI 3
 a = input('Nhập xâu S: ')
 b = a.replace('anh','em')
-print('S=',b)
+print('S = ',b)
