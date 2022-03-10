@@ -22,15 +22,15 @@ btnTimes.addEventListener('click', function(){
 let getDataNews = async () => {
     try {
         const response = await axios.get(
-            "https://vnexpress.net/microservice/home"
+            "https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=8e4wCNCI0dajNRR5mfAc4GGlmqmxGE9Y"
         );
-        let data = await response.data;
-        console.log(data);
-        renderDataNews(mixData(data.data, 1), "#main-news")
-        renderDataNews(mixData(data.data, 4), "#side-news")
-        renderJustIn(mixData(data.data, 4))
-        renderHotNews(mixData(data.data, 4))
-        renderCurrentNews(mixData(data.data, 4))
+        let data = await response.results;
+        console.log(results);
+        renderDataNews(mixData([].results.uri, 1), "#main-news")
+        renderDataNews(mixData(results.uri, 4), "#side-news")
+        renderJustIn(mixData(results.uri, 4))
+        renderHotNews(mixData(results.uri, 4))
+        renderCurrentNews(mixData(results.uri, 4))
     } catch (error) {
         console.error(error);
     }
@@ -39,10 +39,6 @@ let getDataNews = async () => {
 };
 getDataNews()
 
-// let getDataInfo = async ()=>{
-//     let draw = await fetch('https://vnexpress.net/microservice/home')
-//     let data = await draw.data
-// }
 let mixData = (data, l) => {
     let newData = []
     let keyData = ["1001002", "1001005", "1001006", "1001007", "1001009", "1001011"]

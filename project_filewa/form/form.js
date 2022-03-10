@@ -109,3 +109,39 @@ function sweetAlert(icon, message) {
     })
     
 }
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAlMnXunsWZejvuuK4UJVI8UOALFVjMlyI",
+  authDomain: "daily-bugle-d9265.firebaseapp.com",
+  projectId: "daily-bugle-d9265",
+  storageBucket: "daily-bugle-d9265.appspot.com",
+  messagingSenderId: "157991862579",
+  appId: "1:157991862579:web:055a343ae639b7e6913e46",
+  measurementId: "G-S9EHZ88WZQ"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+var con = firebase.database().ref('users');
+
+document.getElementById('formSignUp').addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    var userInfo = con.push();
+    userInfo.set({
+        name: getId("user"),
+        email: getId('email_signup'),
+        password: getId("password_signup")
+    });
+    alert("Sent!");
+});
