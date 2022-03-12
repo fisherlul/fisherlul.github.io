@@ -133,7 +133,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-import { doc, getDoc, setDoc, collection, addDoc} from "https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js";
+import { doc, getDoc, setDoc, collection, addDoc,getFirestore} from "https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -166,37 +166,16 @@ signUp.addEventListener('click', async(e) => {
         var password = document.getElementById('password_signup').value;
         var username = document.getElementById('username').value;
 
-        // createUserWithEmailAndPassword(auth, email, password)
-        //     .then((userCredential) => {
-        //         // Signed in 
-        //         const user = userCredential.user;
-
-        //         set(ref(database, 'users/' + user.uid), {
-        //             username: username,
-        //             email: email
-        //         });
-        //         sweetAlert("success", "Sign Up Successfully");
-        //         window.open("../main page/home.html", "_self")
-        //     })
-        //     .catch((error) => {
-        //         const errorCode = error.code;
-        //         const errorMessage = error.message;
-
-        //         alert(errorMessage);
-        //         // ..
-        //     });
-        
-            let ref = await collection(db,"user");
-            await addDoc(ref,{
-                Name:"Cường học giỏi",
-                Age:"Năm nay bé 8 tuổi",
-                Crush:"Ng yêu mang tên Ngọc Trinh"
-            }).then((result) => {
-                console.log(`Thêm thành công ahihihihi!`);
-            }).catch((err) => {
-                console.log(err);
-            });
-        
+        let ref = await collection(db,"user");
+    await addDoc(ref,{
+        Name:"Cường học giỏi",
+        Age:"Năm nay bé 8 tuổi",
+        Crush:"Ng yêu mang tên Ngọc Trinh"
+    }).then((result) => {
+        console.log(`Thêm thành công ahihihihi!`);
+    }).catch((err) => {
+        console.log(err);
+    });
     }
 });
 
