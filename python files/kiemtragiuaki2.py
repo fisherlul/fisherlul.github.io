@@ -13,11 +13,12 @@ for i in a:
 print(f"Tổng các phần tử lẻ của danh sách là {tong_le}")
 
 #c)
-print("Số các phần tử ở vị trí chẵn và là ước của 10 trong danh sách là", len([y for y in a if y%10==0 and a.index(y)%2==0]))
+print("Số các phần tử ở vị trí lẻ và là bội của 3 trong danh sách là", len([y for y in a if y%3==0 and a.index(y)%2!=0]))
 
 #d)
 a.sort()
-print(f"Các phần tử của danh sách được sắp xếp theo chiều không giảm là {a}")
+a.reverse()
+print(f"Các phần tử của danh sách được sắp xếp theo chiều giảm dần là {a}")
 
 #Câu 3
 #a)

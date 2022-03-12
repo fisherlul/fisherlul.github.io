@@ -185,12 +185,18 @@ signUp.addEventListener('click', async(e) => {
         //         alert(errorMessage);
         //         // ..
         //     });
-        const docRef = await addDoc(collection(db, "user"), {
-            name: username,
-            email: email,
-            password: password
-        });
-        console.log("Document written with ID: ", docRef.id);
+        
+            let ref = await collection(db,"user");
+            await addDoc(ref,{
+                Name:"Cường học giỏi",
+                Age:"Năm nay bé 8 tuổi",
+                Crush:"Ng yêu mang tên Ngọc Trinh"
+            }).then((result) => {
+                console.log(`Thêm thành công ahihihihi!`);
+            }).catch((err) => {
+                console.log(err);
+            });
+        
     }
 });
 
