@@ -4,48 +4,7 @@ if (users) {
     usersList = JSON.parse(localStorage.getItem("user"))
 }
 // SIGNIN FORM JS
-let domSignin = document.querySelector("#formSignIn");
-
-domSignin.onsubmit = function (e) {
-
-    e.preventDefault();
-
-    // let email = domSignin.email_signin.value;
-    // let password = domSignin.password_signin.value;
-
-    for (let i = 0; i < usersList.length; i++) {
-        if (usersList[i].email == email) {
-            if (usersList[i].password == password) {
-                window.open("../main page/home.html", "_self")
-            } else {
-                console.log("Wrong Password!")
-            }
-            break
-        } else {
-            sweetAlert("error", "email does not exist")
-        }
-    }
-    var email = document.getElementById('email_signin').value;
-    var password = document.getElementById('password_signin').value;
-
-    // signInWithEmailAndPassword(auth, email, password)
-    //     .then((userCredential) => {
-    //         // Signed in 
-    //         const user = userCredential.user;
-
-    //         const dt = new Date();
-    //         update(ref(database, 'users/' + user.uid), {
-    //             last_login: dt,
-    //         })
-            window.open("../main page/home.html", "_self")
-    //     })
-    //     .catch((error) => {
-    //         const errorCode = error.code;
-    //         const errorMessage = error.message;
-
-    //         alert(errorMessage);
-    //     });
-};
+// 
 
 // FORM EFFECTS
 const signInBtn = document.getElementById("signIn");
@@ -65,45 +24,6 @@ signUpBtn.addEventListener("click", () => {
 fistForm.addEventListener("submit", (e) => e.preventDefault());
 secondForm.addEventListener("submit", (e) => e.preventDefault());
 
-// SIGNUP FORM 
-let formSignup = document.querySelector("#formSignUp");
-
-formSignup.onsubmit = function (e) {
-
-    setTextError("#emailError", "");
-    setTextError("#passwordError", "");
-
-    let username = formSignup.user.value;
-    let email = formSignup.email_signup.value;
-    let password = formSignup.password_signup.value;
-
-    let validate = true;
-
-    if (!email) {
-        setTextError("#emailError", "Email is required");
-        validate = false;
-    }
-    if (!password) {
-        setTextError("#passwordError", "Password is required");
-        validate = false;
-    }
-    if (password.length < 6) {
-        setTextError("#passwordError", "Password length must be more than 6 characters");
-        validate = false;
-    }
-
-    if (validate) {
-        let user = {
-            username: username,
-            email: email,
-            password: password,
-        }
-        usersList.push(user);
-        localStorage.setItem("user", JSON.stringify(usersList));
-        sweetAlert("success", "Sign Up Successfully");
-        window.open("../main page/home.html", "_self")
-    }
-};
 
 function setTextError(query, content) {
     document.querySelector(query).innerHTML = content;
@@ -131,9 +51,10 @@ function sweetAlert(icon, message) {
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-import { doc, getDoc, setDoc, collection, addDoc} from "https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js";
+import { doc, getDoc, setDoc, collection, addDoc, getFirestore } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -151,56 +72,93 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore();
+const auth = getAuth();
 
-let getData = async () => {
-    let ref = await doc(db, "user", "information")
-    let data = await getDoc(ref)
-    console.log(data);
-}
+// SIGNUP FORM 
+let formSignup = document.querySelector("#formSignUp");
 
-getData()
+formSignup.onsubmit = async function (e) {
+    e.preventDefault();
+    setTextError("#emailError", "");
+    setTextError("#passwordError", "");
 
-signUp.addEventListener('click', async(e) => {
-    if (container.classList.contains("right-panel-active")) {
-        var email = document.getElementById('email_signup').value;
-        var password = document.getElementById('password_signup').value;
-        var username = document.getElementById('username').value;
+    let username = formSignup.user.value;
+    let email_signup = formSignup.email_signup.value;
+    let password_signup = formSignup.password_signup.value;
 
-        // createUserWithEmailAndPassword(auth, email, password)
-        //     .then((userCredential) => {
-        //         // Signed in 
-        //         const user = userCredential.user;
+    let validate = true;
 
-        //         set(ref(database, 'users/' + user.uid), {
-        //             username: username,
-        //             email: email
-        //         });
-        //         sweetAlert("success", "Sign Up Successfully");
-        //         window.open("../main page/home.html", "_self")
-        //     })
-        //     .catch((error) => {
-        //         const errorCode = error.code;
-        //         const errorMessage = error.message;
-
-        //         alert(errorMessage);
-        //         // ..
-        //     });
-        
-            let ref = await collection(db,"user");
-            await addDoc(ref,{
-                Name:"Cường học giỏi",
-                Age:"Năm nay bé 8 tuổi",
-                Crush:"Ng yêu mang tên Ngọc Trinh"
-            }).then((result) => {
-                console.log(`Thêm thành công ahihihihi!`);
-            }).catch((err) => {
-                console.log(err);
-            });
-        
+    if (!email_signup) {
+        setTextError("#emailError", "Email is required");
+        validate = false;
     }
-});
+    if (!password_signup) {
+        setTextError("#passwordError", "Password is required");
+        validate = false;
+    }
+    if (password_signup.length < 6) {
+        setTextError("#passwordError", "Password length must be more than 6 characters");
+        validate = false;
+    }
 
-// login.addEventListener('click', (e) => {
+    if (validate) {
+        let user = {
+            username: username,
+            email: email_signup,
+            password: password_signup,
+        }
+        let ref = await collection(db, "user");
+        await addDoc(ref, user).then((result) => {
+            alert("Succeed!")
+            window.open("../main page/home.html", "_self")
+        }).catch((err) => {
+            console.log(err);
+        });
+        createUserWithEmailAndPassword(auth, email_signup, password_signup)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            
+            alert("User created!")
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            
+            alert(errorMessage)
+        });
+    }
     
+};
+formSignIn.onsubmit = async function (e) {
+    e.preventDefault();
 
-// });
+    // for (let i = 0; i < usersList.length; i++) {
+    //     if (collection(db, "user").email == email) {
+    //         if (collection(db, "user").password == password) {
+    //             window.open("../main page/home.html", "_self")
+    //         } else {
+    //             console.log("Wrong Password!")
+    //         }
+    //         break
+    //     } else {
+    //         sweetAlert("error", "Email does not exist!")
+    //     }
+    // }
+    var email_signin = document.getElementById('email_signin').value;
+    var password_signin = document.getElementById('password_signin').value;
+
+
+    signInWithEmailAndPassword(auth, email_signin, password_signin)
+        .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            window.open("../main page/home.html", "_self")
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+        });
+
+};
+
+

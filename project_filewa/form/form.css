@@ -152,23 +152,27 @@ body {
 	transform: translateX(20%);
 }
 
+.-box-sd-effect{
+	width: 105%;
+    margin-top :0.5em;
+	margin-right: 50px
+}
 .btn {
-	background-color: black;
+	background-color: grey;
 	background-image: black;
 	border-radius: 20px;
-	border: 1px solid black;
+	border: 1px solid grey;
 	color: var(--white);
 	cursor: pointer;
 	font-size: 0.8rem;
 	font-weight: bold;
-	letter-spacing: 0.1rem;
 	padding: 0.9rem 4rem;
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
 }
 
 .form > .btn {
-	margin-top: 1.5rem;
+	/* margin-top: 1.5rem; */
 }
 
 .btn:active {
