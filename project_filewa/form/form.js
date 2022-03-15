@@ -51,7 +51,7 @@ function sweetAlert(icon, message) {
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
+import { getAuth, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, GithubAuthProvider } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { doc, getDoc, setDoc, collection, addDoc, getFirestore } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js";
@@ -71,8 +71,8 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+const auth = getAuth()
 const db = getFirestore();
-const auth = getAuth();
 
 // SIGNUP FORM 
 let formSignup = document.querySelector("#formSignUp");
@@ -115,50 +115,97 @@ formSignup.onsubmit = async function (e) {
             console.log(err);
         });
         createUserWithEmailAndPassword(auth, email_signup, password_signup)
-        .then((userCredential) => {
-            const user = userCredential.user;
-            
-            alert("User created!")
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            
-            alert(errorMessage)
-        });
+            .then((userCredential) => {
+                alert("User created!")
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+
+                alert(errorMessage)
+            });
     }
-    
+
 };
 formSignIn.onsubmit = async function (e) {
+
     e.preventDefault();
-
-    // for (let i = 0; i < usersList.length; i++) {
-    //     if (collection(db, "user").email == email) {
-    //         if (collection(db, "user").password == password) {
-    //             window.open("../main page/home.html", "_self")
-    //         } else {
-    //             console.log("Wrong Password!")
-    //         }
-    //         break
-    //     } else {
-    //         sweetAlert("error", "Email does not exist!")
-    //     }
-    // }
-    var email_signin = document.getElementById('email_signin').value;
-    var password_signin = document.getElementById('password_signin').value;
-
-
     signInWithEmailAndPassword(auth, email_signin, password_signin)
         .then((userCredential) => {
-            // Signed in 
             const user = userCredential.user;
-            window.open("../main page/home.html", "_self")
+            console.log(user);
+            setTimeout(
+                () => {
+                    alert("Succeed!")
+                    window.open("../main page/home.html", "_self")
+                },
+                3 * 1000
+            );
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
         });
 
-};
+    //     var email_signin = document.getElementById('email_signin').value;
+    //     var password_signin = document.getElementById('password_signin').value;
 
+    //     if (email_signin == email) {
+    //         if (password_signin == password) {
+    //             signInWithEmailAndPassword(auth, email_signin, password_signin)
+    //                 .then((userCredential) => {
+    //                     // Signed in 
+    //                     const user = userCredential.user;
+    //                     window.open("../main page/home.html", "_self")
+    //                 })
+    //                 .catch((error) => {
+    //                     const errorCode = error.code;
+    //                     const errorMessage = error.message;
+    //                 });
+    //         } else {
+    //             alert("Wrong Password!")
+    //         }
+    //     } else {
+    //         alert("Email does not exist!")
+    //     }
+    // };
+}
+// AUTHENTICATION
+let gg_provider = new GoogleAuthProvider();
+let gh_provider = new GithubAuthProvider();
 
+document.getElementById("login-google").addEventListener("click", loginGoogle)
+document.getElementById("login-github").addEventListener("click", loginGithub)
+
+function loginGoogle() {
+    signInWithPopup(auth, gg_provider)
+        .then(result => {
+            console.log(result.user);
+            setTimeout(
+                () => {
+                    alert("Succeed!")
+                    window.open("../main page/home.html", "_self")
+                },
+                3 * 1000
+            );
+        }).catch(err => {
+            console.log(err);
+        })
+}
+
+function loginGithub() {
+    console.log('login');
+    signInWithPopup(auth, gh_provider)
+        .then(result => {
+            console.log(result.user);
+            setTimeout(
+                () => {
+                    alert("Succeed!")
+                    window.open("../main page/home.html", "_self")
+                },
+                3 * 1000
+            );
+        }).catch(err => {
+            console.log(err);
+        })
+}
