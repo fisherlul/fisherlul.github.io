@@ -51,7 +51,7 @@ function sweetAlert(icon, message) {
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
-import { getAuth, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, GithubAuthProvider } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
+import { getAuth, onAuthStateChanged, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, GithubAuthProvider } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { doc, getDoc, setDoc, collection, addDoc, getFirestore } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js";
@@ -130,45 +130,24 @@ formSignup.onsubmit = async function (e) {
 formSignIn.onsubmit = async function (e) {
 
     e.preventDefault();
+
     signInWithEmailAndPassword(auth, email_signin, password_signin)
         .then((userCredential) => {
-            const user = userCredential.user;
-            console.log(user);
+            alert("Logged in!")
             setTimeout(
                 () => {
                     alert("Succeed!")
                     window.open("../main page/home.html", "_self")
                 },
-                3 * 1000
+                2 * 1000
             );
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
+            console.log("Error: " + errorMessage);
         });
 
-    //     var email_signin = document.getElementById('email_signin').value;
-    //     var password_signin = document.getElementById('password_signin').value;
-
-    //     if (email_signin == email) {
-    //         if (password_signin == password) {
-    //             signInWithEmailAndPassword(auth, email_signin, password_signin)
-    //                 .then((userCredential) => {
-    //                     // Signed in 
-    //                     const user = userCredential.user;
-    //                     window.open("../main page/home.html", "_self")
-    //                 })
-    //                 .catch((error) => {
-    //                     const errorCode = error.code;
-    //                     const errorMessage = error.message;
-    //                 });
-    //         } else {
-    //             alert("Wrong Password!")
-    //         }
-    //     } else {
-    //         alert("Email does not exist!")
-    //     }
-    // };
 }
 // AUTHENTICATION
 let gg_provider = new GoogleAuthProvider();
@@ -186,7 +165,7 @@ function loginGoogle() {
                     alert("Succeed!")
                     window.open("../main page/home.html", "_self")
                 },
-                3 * 1000
+                2 * 1000
             );
         }).catch(err => {
             console.log(err);
@@ -203,9 +182,26 @@ function loginGithub() {
                     alert("Succeed!")
                     window.open("../main page/home.html", "_self")
                 },
-                3 * 1000
+                2 * 1000
             );
         }).catch(err => {
             console.log(err);
         })
 }
+
+export {loginGoogle, loginGithub};
+
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log("User is logged in");
+      setTimeout(
+        () => {
+            alert("Succeed!")
+            window.open("../main page/home.html", "_self")
+        },
+        2 * 1000
+      );
+    } else {
+      console.log("Error");
+    }
+  });

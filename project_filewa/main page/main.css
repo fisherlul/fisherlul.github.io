@@ -435,7 +435,7 @@ main a:hover{
     }
     .social-icons ul{
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         padding: 0 20px;
     }
     .social-icons ul li{
@@ -615,3 +615,19 @@ footer > p{
     width: 100px;
 }
 
+#logout {
+    margin-left: 40px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px
+}
+#logout:hover {
+    text-decoration: underline;
+}
+
+#user {
+    margin-left: 40px;
+    color: #fff;
+    text-transform: uppercase;
+}
