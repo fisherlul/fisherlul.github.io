@@ -52,7 +52,7 @@
                         <li><a href="#">category</a></li>
                         <button id="logout">Log Out</button>
                         <li id="user">
-                            
+
                         </li>
                     </ul>
                 </nav>
@@ -82,7 +82,7 @@
             </button>
 
             <div id="current-news" class="current-news-head">
-                
+
             </div>
         </div>
 
@@ -178,11 +178,49 @@
 
 
         <p>Copyright &copy; dailybugle.com, 2021-2021 The Daily Bugle</p>
-    </footer>    
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script scr="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
-    <script src="./main.js" type="module"></script>
     <script src="../weather/weather.js"></script>
+    <script type="module">
+        console.log(document.querySelector("button#logout"));
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+        import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyAlMnXunsWZejvuuK4UJVI8UOALFVjMlyI",
+            authDomain: "daily-bugle-d9265.firebaseapp.com",
+            databaseURL: "https://daily-bugle-d9265-default-rtdb.firebaseio.com",
+            projectId: "daily-bugle-d9265",
+            storageBucket: "daily-bugle-d9265.appspot.com",
+            messagingSenderId: "157991862579",
+            appId: "1:157991862579:web:055a343ae639b7e6913e46",
+            measurementId: "G-S9EHZ88WZQ"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth()
+
+        document.querySelector("button#logout").onclick = () => {
+            console.log("hello");
+            signOut(auth).then(() => {
+                // Sign-out successful.
+                console.log("Log out successfully!");
+                window.open("../form/form.html", "_self")
+
+              }).catch((error) => {
+                // An error happened.
+                console.log(error);
+              });
+        }
+
+
+        function showUserDetails(user) {
+            document.getElementById("user").innerHTML = `
+            <p>Hello ${localStorage.getItem(user.username)}</p>`
+        };
+
+    </script>
 </body>
 
 </html>

@@ -71,67 +71,20 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-const auth = getAuth()
+const auth = getAuth();
 const db = getFirestore();
 
 // SIGNUP FORM 
 let formSignup = document.querySelector("#formSignUp");
 
-formSignup.onsubmit = async function (e) {
-    e.preventDefault();
-    setTextError("#emailError", "");
-    setTextError("#passwordError", "");
-
-    let username = formSignup.user.value;
-    let email_signup = formSignup.email_signup.value;
-    let password_signup = formSignup.password_signup.value;
-
-    let validate = true;
-
-    if (!email_signup) {
-        setTextError("#emailError", "Email is required");
-        validate = false;
-    }
-    if (!password_signup) {
-        setTextError("#passwordError", "Password is required");
-        validate = false;
-    }
-    if (password_signup.length < 6) {
-        setTextError("#passwordError", "Password length must be more than 6 characters");
-        validate = false;
-    }
-
-    if (validate) {
-        let user = {
-            username: username,
-            email: email_signup,
-            password: password_signup,
-        }
-        let ref = await collection(db, "user");
-        await addDoc(ref, user).then((result) => {
-            alert("Succeed!")
-            window.open("../main page/home.html", "_self")
-        }).catch((err) => {
-            console.log(err);
-        });
-        createUserWithEmailAndPassword(auth, email_signup, password_signup)
-            .then((userCredential) => {
-                alert("User created!")
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-
-                alert(errorMessage)
-            });
-    }
-
-};
 formSignIn.onsubmit = async function (e) {
 
+    let email_signin = document.getElementById("email_signin");
+    let password_signin = document.getElementById("password_signin");
+
     e.preventDefault();
 
-    signInWithEmailAndPassword(auth, email_signin, password_signin)
+    signInWithEmailAndPassword(auth, email_signin.value, password_signin.value)
         .then((userCredential) => {
             alert("Logged in!")
             setTimeout(
@@ -173,7 +126,6 @@ function loginGoogle() {
 }
 
 function loginGithub() {
-    console.log('login');
     signInWithPopup(auth, gh_provider)
         .then(result => {
             console.log(result.user);
@@ -189,19 +141,67 @@ function loginGithub() {
         })
 }
 
-export {loginGoogle, loginGithub};
+formSignup.onsubmit = async function (e) {
+    e.preventDefault();
 
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-      console.log("User is logged in");
-      setTimeout(
-        () => {
-            alert("Succeed!")
-            window.open("../main page/home.html", "_self")
-        },
-        2 * 1000
-      );
-    } else {
-      console.log("Error");
+    setTextError("#emailError", "");
+    setTextError("#passwordError", "");
+
+    let username = formSignup.username.value;
+    let email_signup = formSignup.email_signup.value;
+    let password_signup = formSignup.password_signup.value;
+
+    let validate = true;
+
+    if (!email_signup) {
+        setTextError("#emailError", "Email is required");
+        validate = false;
     }
-  });
+    if (!password_signup) {
+        setTextError("#passwordError", "Password is required");
+        validate = false;
+    }
+    if (password_signup.length < 6) {
+        setTextError("#passwordError", "Password length must be more than 6 characters");
+        validate = false;
+    }
+
+    if (validate) {
+        createUserWithEmailAndPassword(auth, email_signup, password_signup)
+            .then((userCredential) => {
+                alert("User created!")
+                console.log(userCredential.user);
+                setTimeout(
+                    () => {
+                        window.open("../main page/home.html", "_self")
+                    },
+                    2 * 1000
+                );
+            })
+            .catch((error) => {
+                // console.log(error);
+            });
+        let user = {
+            username: username,
+            email: email_signup,
+            password: password_signup,
+        }
+        localStorage.setItem('user', JSON.stringify(user));
+    }
+}
+
+formSignup.addEventListener('onclick', () => {
+    let userfb = {
+        username: username,
+        email: email_signup,
+        password: password_signup,
+    }
+    formSignup.addEventListener('onclick', () => {
+        let ref = await collection(db, "user");
+        await addDoc(ref, userfb).then((result) => {
+            console.log('Succeed!')
+        }).catch((err) => {
+            console.log(err);
+        });
+    })
+})

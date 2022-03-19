@@ -136,18 +136,17 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth()
 
-document.getElementById("logout").addEventListener("click", logOut)
-function logOut() {
-    signOut(auth).then(() => {
-        // Sign-out successful.
-        console.log("Log out successfully!");
-      }).catch((error) => {
-        // An error happened.
-        console.log(error);
-      });
-}
+// document.querySelector("button#logout").onclick = () => {
+//     console.log("hello");
+//     // signOut(auth).then(() => {
+//     //     // Sign-out successful.
+//     //     console.log("Log out successfully!");
+//     //   }).catch((error) => {
+//     //     // An error happened.
+//     //     console.log(error);
+//     //   });
+// }
 
-import {loginGoogle, loginGithub} from "../form/form.js";
 
 function showUserDetails(user) {
     document.getElementById("user").innerHTML = `
