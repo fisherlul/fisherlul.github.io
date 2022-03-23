@@ -118,38 +118,38 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
 
-// LOG OUT FUNCTION
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
-import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
-const firebaseConfig = {
-    apiKey: "AIzaSyAlMnXunsWZejvuuK4UJVI8UOALFVjMlyI",
-    authDomain: "daily-bugle-d9265.firebaseapp.com",
-    databaseURL: "https://daily-bugle-d9265-default-rtdb.firebaseio.com",
-    projectId: "daily-bugle-d9265",
-    storageBucket: "daily-bugle-d9265.appspot.com",
-    messagingSenderId: "157991862579",
-    appId: "1:157991862579:web:055a343ae639b7e6913e46",
-    measurementId: "G-S9EHZ88WZQ"
-};
+// // LOG OUT FUNCTION
+// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+// import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
+// const firebaseConfig = {
+//     apiKey: "AIzaSyAlMnXunsWZejvuuK4UJVI8UOALFVjMlyI",
+//     authDomain: "daily-bugle-d9265.firebaseapp.com",
+//     databaseURL: "https://daily-bugle-d9265-default-rtdb.firebaseio.com",
+//     projectId: "daily-bugle-d9265",
+//     storageBucket: "daily-bugle-d9265.appspot.com",
+//     messagingSenderId: "157991862579",
+//     appId: "1:157991862579:web:055a343ae639b7e6913e46",
+//     measurementId: "G-S9EHZ88WZQ"
+// };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth()
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+// const auth = getAuth()
 
-// document.querySelector("button#logout").onclick = () => {
-//     console.log("hello");
-//     // signOut(auth).then(() => {
-//     //     // Sign-out successful.
-//     //     console.log("Log out successfully!");
-//     //   }).catch((error) => {
-//     //     // An error happened.
-//     //     console.log(error);
-//     //   });
-// }
+// // document.querySelector("button#logout").onclick = () => {
+// //     console.log("hello");
+// //     // signOut(auth).then(() => {
+// //     //     // Sign-out successful.
+// //     //     console.log("Log out successfully!");
+// //     //   }).catch((error) => {
+// //     //     // An error happened.
+// //     //     console.log(error);
+// //     //   });
+// // }
 
 
-function showUserDetails(user) {
-    document.getElementById("user").innerHTML = `
-    <p>Hello ${user.username}</p>`
-};
+// function showUserDetails(user) {
+//     document.getElementById("user").innerHTML = `
+//     <p>Hello ${user.username}</p>`
+// };
 

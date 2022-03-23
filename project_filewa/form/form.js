@@ -87,12 +87,16 @@ formSignIn.onsubmit = async function (e) {
     signInWithEmailAndPassword(auth, email_signin.value, password_signin.value)
         .then((userCredential) => {
             alert("Logged in!")
+            setTimeout(() => {
+                alert("Redirecting...")
+            },
+            1 * 1000)
             setTimeout(
                 () => {
-                    alert("Succeed!")
+                    alert("Redirecting...")
                     window.open("../main page/home.html", "_self")
                 },
-                2 * 1000
+                3 * 1000
             );
         })
         .catch((error) => {
@@ -179,7 +183,7 @@ formSignup.onsubmit = async function (e) {
                 );
             })
             .catch((error) => {
-                // console.log(error);
+                console.log(error);
             });
         let user = {
             username: username,
@@ -190,18 +194,18 @@ formSignup.onsubmit = async function (e) {
     }
 }
 
-formSignup.addEventListener('onclick', () => {
-    let userfb = {
-        username: username,
-        email: email_signup,
-        password: password_signup,
-    }
-    formSignup.addEventListener('onclick', () => {
-        let ref = await collection(db, "user");
-        await addDoc(ref, userfb).then((result) => {
-            console.log('Succeed!')
-        }).catch((err) => {
-            console.log(err);
-        });
-    })
-})
+// formSignup.addEventListener('onclick', () => {
+//     let userfb = {
+//         username: username,
+//         email: email_signup,
+//         password: password_signup,
+//     }
+//     formSignup.addEventListener('onclick', () => {
+//         let ref = await collection(db, "user");
+//         await addDoc(ref, userfb).then((result) => {
+//             console.log('Succeed!')
+//         }).catch((err) => {
+//             console.log(err);
+//         });
+//     })
+// })

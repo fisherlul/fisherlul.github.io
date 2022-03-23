@@ -15,6 +15,7 @@
     <link href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css" rel="stylesheet">
     <!-- weather-->
     <link rel="stylesheet" href="../weather/weather.css">
+    <link rel="stylesheet" href="./index.css">
 </head>
 
 <body>
@@ -51,9 +52,9 @@
                         <li><a href="#">broadcast</a></li>
                         <li><a href="#">category</a></li>
                         <button id="logout">Log Out</button>
-                        <li id="user">
+                        <div id="show-user">
 
-                        </li>
+                        </div>
                     </ul>
                 </nav>
             </div>
@@ -73,22 +74,38 @@
     </header>
 
     <section class="banner">
-        <div class="banner-main-content">
-            <h2>GET WORLD'S LATEST NEWS</h2>
-            <h3>World's leading news portal</h3>
+        <div class="archive">
+            <article class="article">1
 
-            <button>
-                <a href="#">Know more</a>
-            </button>
+            </article>
+            <article class="article">2
 
-            <div id="current-news" class="current-news-head">
+            </article>
+            <article class="article">3
 
-            </div>
-        </div>
+            </article>
+            <article class="article">4
 
-        <div id="hot-news" class="banner-sub-content">
+            </article>
+            <article class="article">5
 
-        </div>
+            </article>
+            <article class="article">6
+
+            </article>
+            <article class="article">7
+
+            </article>
+            <article class="article">8
+
+            </article>
+            <article class="article">9
+
+            </article>
+            <article class="article">10
+
+            </article>
+          </div>
     </section>
     <hr>
 
@@ -183,7 +200,6 @@
     <script scr="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
     <script src="../weather/weather.js"></script>
     <script type="module">
-        console.log(document.querySelector("button#logout"));
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
         import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
         const firebaseConfig = {
@@ -205,9 +221,15 @@
             console.log("hello");
             signOut(auth).then(() => {
                 // Sign-out successful.
-                console.log("Log out successfully!");
-                window.open("../form/form.html", "_self")
-
+                alert("Log out successfully!");
+                setTimeout(() => {
+                    alert("Redirecting...")
+                },
+                2 * 1000)
+                setTimeout(() => {
+                    window.open("../form/form.html", "_self")
+                },
+                3 * 1000)
               }).catch((error) => {
                 // An error happened.
                 console.log(error);
@@ -216,7 +238,7 @@
 
 
         function showUserDetails(user) {
-            document.getElementById("user").innerHTML = `
+            document.querySelector("#show-user").innerHTML = `
             <p>Hello ${localStorage.getItem(user.username)}</p>`
         };
 

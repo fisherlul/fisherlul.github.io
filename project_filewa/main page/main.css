@@ -97,7 +97,7 @@ hr{
 
 /* banner */
 
-.banner{
+/* .banner{
     min-height: auto;
     display: grid;
     grid-template-columns: 1fr;
@@ -141,7 +141,7 @@ hr{
 
 .banner-main-content button:hover a{
     color: #0d0d0d;  
-}
+} */
 
 .current-news-head{
     background: #fff;
