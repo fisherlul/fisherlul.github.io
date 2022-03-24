@@ -29,25 +29,8 @@ function setTextError(query, content) {
     document.querySelector(query).innerHTML = content;
 }
 
-function sweetAlert(icon, message) {
-    const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-            toast.addEventListener('mouseenter', Swal.stopTimer)
-            toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
-    })
+// FIREBASE FORM
 
-    Toast.fire({
-        icon: icon,
-        title: message,
-    })
-
-}
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
@@ -173,13 +156,17 @@ formSignup.onsubmit = async function (e) {
     if (validate) {
         createUserWithEmailAndPassword(auth, email_signup, password_signup)
             .then((userCredential) => {
-                alert("User created!")
+                Swal.fire({
+                    title: 'Logged in!',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
                 console.log(userCredential.user);
                 setTimeout(
                     () => {
                         window.open("../main page/home.html", "_self")
                     },
-                    2 * 1000
+                    3 * 1000
                 );
             })
             .catch((error) => {
@@ -194,13 +181,15 @@ formSignup.onsubmit = async function (e) {
     }
 }
 
-// formSignup.addEventListener('onclick', () => {
+// formSignup.addEventListener('click', (e) => {
+//     e.preventDefault();
+    
 //     let userfb = {
 //         username: username,
 //         email: email_signup,
 //         password: password_signup,
 //     }
-//     formSignup.addEventListener('onclick', () => {
+//     .then(() => {
 //         let ref = await collection(db, "user");
 //         await addDoc(ref, userfb).then((result) => {
 //             console.log('Succeed!')
