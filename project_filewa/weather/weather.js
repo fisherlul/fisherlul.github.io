@@ -93,9 +93,5 @@ form.addEventListener("submit", e => {
     msg.textContent = "";
     form.reset();
     input.focus();
-
-
-
-
 });
 

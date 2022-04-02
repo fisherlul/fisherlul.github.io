@@ -17,6 +17,14 @@
     <link rel="stylesheet" href="../weather/weather.css">
     <!-- css -->
     <link rel="stylesheet" href="./index.css">
+    <style>
+        #show-user {
+            margin-left: 80px;
+            margin-top: 11px;
+            color: #fff;
+            font-size: 20px
+        }
+    </style>
 </head>
 
 <body>
@@ -221,7 +229,11 @@
             console.log("hello");
             signOut(auth).then(() => {
                 // Sign-out successful.
-                alert("Log out successfully!");
+                Swal.fire({
+                    title: 'Logged out successfully!',
+                    icon: 'success',
+                    confirmButtonText: 'Great'
+                  })
                 setTimeout(() => {
                     alert("Redirecting...")
                 },
@@ -235,10 +247,12 @@
                 console.log(error);
             });
         }
-        function showUserDetails(user) {
+        function showUserDetails() {
+            let user_name = JSON.parse(localStorage.getItem("user"));
             document.querySelector("#show-user").innerHTML = `
-            <p>Hello ${localStorage.getItem(user.username)}</p>`
+            <p>Hello ${user_name.username}</p>`
         };
+        showUserDetails()
     </script>
 </body>
 

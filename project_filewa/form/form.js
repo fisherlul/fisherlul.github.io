@@ -157,11 +157,10 @@ formSignup.onsubmit = async function (e) {
         createUserWithEmailAndPassword(auth, email_signup, password_signup)
             .then((userCredential) => {
                 Swal.fire({
-                    title: 'Logged in!',
+                    title: 'Signed up sucessfully!',
                     icon: 'success',
                     confirmButtonText: 'Cool'
                   })
-                console.log(userCredential.user);
                 setTimeout(
                     () => {
                         window.open("../main page/home.html", "_self")
