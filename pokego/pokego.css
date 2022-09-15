@@ -1,0 +1,168 @@
+body {
+    font-family: 'VT323', monospace;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+ul {
+    list-style: none;
+}
+
+.pokedex {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f90404;
+    height: 500px;
+    border: 6px solid #9e0407;
+    border-radius: 0 30% 0 0;
+    width: 900px;
+}
+
+.details {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    width: 100px;
+    padding: 30px;
+    border-radius: 0 0 30px 0;
+}
+
+.details-circles {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: 2px solid black;
+}
+
+.details-circle {
+    width: 30px;
+    height: 30px;
+    background-color: cyan;
+    border: 2px solid black;
+    border-radius: 100%;
+}
+
+.details-rojo {
+    background-color: red;
+}
+
+.details-amarillo {
+    background-color: yellow;
+}
+
+.details-verde {
+    background-color: green;
+}
+
+.column-izq {
+    border: 1px solid black;
+    width: 60%;
+
+}
+
+.column-der {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.column-izq-screen {
+    padding-right: 20px;
+    padding-top: 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-image: url("https://media.istockphoto.com/photos/lcd-screen-texture-picture-id187872972?k=6&m=187872972&s=170667a&w=0&h=AmrsSEjJfGXLKgbX6XPfJKJvy9wCEKC8nRkhs8nm-_c=");
+    display: flex;
+}
+
+.column-izq-screenborder {
+    padding: 20px 10px 40px 10px;
+    background-color: #afafaf;
+    border: 2px solid black;
+    border-radius: 0 0 0 60px;
+}
+
+input {
+    font-family: 'VT323', monospace;
+    font-size: 80px;
+    background-color: #31f904;
+    border-radius: 8%;
+    width: 80%;
+    height: 200px;
+    outline: none;
+}
+
+.poke-image {
+    border-radius: 8%;
+    width: 80%;
+    height: 250px;
+    background-color: white;
+}
+
+.poke-front-image {
+  height: 270px;
+  width: 300px;
+  margin-left: 10px;
+}
+
+#searchbar {
+    width: 80%;
+    height: 60px;
+    background-color: #4d9af2;
+    border: 5px solid #306eb5;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-family: 'VT323', monospace;
+    font-size: 50px;
+    outline: none;
+}
+
+.screen-list2 {
+
+    width: 60%;
+}
+
+img {
+    width: 100%;
+
+}
+
+/*Search Bar*/
+
+form {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+form input {
+    font-size: 1rem;
+    height: 40px;
+    padding: 5px 5px 10px;
+    border-bottom: 1px solid;
+}
+
+form input::placeholder {
+    color: white;
+}
+
+form button {
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+    width: 20%
+}
+
+form button:hover {
+    background: var(--white);
+}
+
+form .msg {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    max-width: 450px;
+    min-height: 40px;
+}

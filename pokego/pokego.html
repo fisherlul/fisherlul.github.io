@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <title>Pokedict</title>
+    <link rel="stylesheet" href="./pokego.css">
+</head>
+<body>
+    <div class="pokedex">
+        <div class="column-izq">
+            <div class="details">
+                <div class="details-circle"></div>
+                <div class="details-rojo , details-circles"></div>
+                <div class="details-amarillo , details-circles"></div>
+                <div class="details-verde , details-circles"></div>
+            </div>
+            <div class="column-izq-screenborder">
+                <div class="column-izq-screen">
+                    <ul class="screen-list">
+                        <li><h2>id number</h2></li>
+                        <li><h2>NAME</h2></li>
+                        <li><h2>HeighT</h2></li>
+                        <li><h2>weight</h2></li>
+                        <li><h2>experience</h2></li>
+                    </ul>
+                    <ul class="screen-list2">
+                        <li><h2 class="poke-number">-</h2></li>
+                        <li><h2 class="poke-name">-</h2></li>
+                        <li><h2 class="poke-height">-</h2></li>
+                        <li><h2 class="poke-weight">-</h2></li>
+                        <li><h2 class="poke-bio">-</h2></li>
+                    </ul>
+                    <div class="sprite-cont"> 
+                            <img id="foto">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column-der">
+        <div class="poke-image">
+            <img src="" class="poke-front-image" alt="front">
+        </div>
+        <div id="searchbar">
+            <form>
+                <input type="text" placeholder="Search for a Pokémon" autofocus>
+                <button type="submit">Search</button>
+                <span class="msg"></span>
+            </form>
+        </div>
+    </div>
+    <script src="./pokego.js"></script>
+</body>
+</html>
