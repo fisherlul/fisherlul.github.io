@@ -6,7 +6,6 @@ if (users) {
 // SIGNIN FORM JS
 // 
 
-// FORM EFFECTS
 const signInBtn = document.getElementById("signIn");
 const signUpBtn = document.getElementById("signUp");
 const fistForm = document.getElementById("formSignUp");
@@ -32,23 +31,23 @@ function setTextError(query, content) {
 // FIREBASE FORM
 
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
-import { getAuth, onAuthStateChanged, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, GithubAuthProvider } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+import { doc, getDoc, getFirestore } from "https://www.gstatic.com/firebasejs/9.10.10/firebase-firestore.js";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-import { doc, getDoc, setDoc, collection, addDoc, getFirestore } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-firestore.js";
+import { getAuth, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, GithubAuthProvider } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyAlMnXunsWZejvuuK4UJVI8UOALFVjMlyI",
-    authDomain: "daily-bugle-d9265.firebaseapp.com",
-    databaseURL: "https://daily-bugle-d9265-default-rtdb.firebaseio.com",
-    projectId: "daily-bugle-d9265",
-    storageBucket: "daily-bugle-d9265.appspot.com",
-    messagingSenderId: "157991862579",
-    appId: "1:157991862579:web:055a343ae639b7e6913e46",
-    measurementId: "G-S9EHZ88WZQ"
+  apiKey: "AIzaSyCfZZS6UMhmouh_RwBK3ItKnsP7hQYLuYQ",
+  authDomain: "the-real-daily-bugle.firebaseapp.com",
+  projectId: "the-real-daily-bugle",
+  storageBucket: "the-real-daily-bugle.appspot.com",
+  messagingSenderId: "806795679544",
+  appId: "1:806795679544:web:3d95df4ce0d6cee13253cd",
+  measurementId: "G-LBJ3RHGWS5"
 };
 
 // Initialize Firebase
@@ -159,7 +158,7 @@ formSignup.onsubmit = async function (e) {
                 Swal.fire({
                     title: 'Signed up sucessfully!',
                     icon: 'success',
-                    confirmButtonText: 'Cool'
+                    confirmButtonText: 'OK'
                   })
                 setTimeout(
                     () => {
@@ -189,8 +188,8 @@ formSignup.onsubmit = async function (e) {
 //         password: password_signup,
 //     }
 //     .then(() => {
-//         let ref = await collection(db, "user");
-//         await addDoc(ref, userfb).then((result) => {
+//         let ref = collection(db, "user");
+//         addDoc(ref, userfb).then((result) => {
 //             console.log('Succeed!')
 //         }).catch((err) => {
 //             console.log(err);
