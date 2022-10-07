@@ -33,11 +33,11 @@ function setTextError(query, content) {
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
-import { doc, getDoc, getFirestore } from "https://www.gstatic.com/firebasejs/9.10.10/firebase-firestore.js";
+import { collection, setDoc, addDoc, getFirestore } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-import { getAuth, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, GithubAuthProvider } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
+import { getAuth, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, GithubAuthProvider } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -54,7 +54,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth();
-const db = getFirestore();
+const db = getFirestore(app);
 
 // SIGNUP FORM 
 let formSignup = document.querySelector("#formSignUp");
@@ -155,11 +155,12 @@ formSignup.onsubmit = async function (e) {
     if (validate) {
         createUserWithEmailAndPassword(auth, email_signup, password_signup)
             .then((userCredential) => {
-                Swal.fire({
-                    title: 'Signed up sucessfully!',
-                    icon: 'success',
-                    confirmButtonText: 'OK'
-                  })
+                setTimeout(
+                    () => {
+                        swal("Success!", "You signed up successfully!", "success");
+                    },
+                    2 * 1000
+                );
                 setTimeout(
                     () => {
                         window.open("../main page/home.html", "_self")
@@ -175,7 +176,7 @@ formSignup.onsubmit = async function (e) {
             email: email_signup,
             password: password_signup,
         }
-        localStorage.setItem('user', JSON.stringify(user));
+        localStorage.setItem('user', JSON.stringify(user)); 
     }
 }
 

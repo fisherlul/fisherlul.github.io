@@ -284,6 +284,21 @@ main a:hover{
     margin: 15px 30px
 }
 
+/* .special_article1, .special_article2{
+    height: 100%;
+} */
+
+.article h1{
+    font-size: 13px;
+    margin-top: 10px;
+    height: 60px
+}
+
+/* .archive img{
+    width: 100px;
+    height: 80px
+} */
+
 /** main-container-right ***/
 
 .main-container-right{
