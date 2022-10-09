@@ -39,6 +39,7 @@
     box-shadow:
       0 5px 10px rgba(0, 0, 0, 0.1),
       0 20px 20px rgba(0, 0, 0, 0.05);
+    max-height: 350px
   }
   
   .article:nth-child(1)>hr.image {
@@ -64,4 +65,24 @@
     color: #808;
     font-weight: bold;
     font-family: courier;
+  }
+
+  .article img {
+    max-width: 350px;
+    max-height: 800px
+  }
+
+  #just-in {
+    width: 900px;
+    /* height: 100px */
+  }
+
+  .title{
+    margin-left: 30px;
+    text-transform: uppercase;
+  }
+
+  .title-latest {
+    margin-left: -30px;
+    text-transform: uppercase;
   }

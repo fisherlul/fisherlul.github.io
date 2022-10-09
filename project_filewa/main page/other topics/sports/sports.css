@@ -623,7 +623,7 @@ footer > p{
 
 #logout {
     margin-left: 40px;
-    color: #fff;
+    color: whitesmoke;
     text-transform: uppercase;
     font-family: 'Oswald', sans-serif;
     font-size: 20px
@@ -645,4 +645,14 @@ footer > p{
 .just-in-news {
     display: flex;
     flex-direction: column;
+}
+
+.title{
+    margin-left: 30px;
+    text-transform: uppercase;
+}
+
+.title-latest {
+    margin-left: -30px;
+    text-transform: uppercase;
 }

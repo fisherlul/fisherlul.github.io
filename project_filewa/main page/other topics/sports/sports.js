@@ -24,7 +24,7 @@ const main_news_div = document.querySelector('.archive')
 const side_news_div = document.querySelector('#just-in')
 
 let getDataNews = () => {
-    fetch(`https://api.nytimes.com/svc/topstories/v2/world.json?api-key=8e4wCNCI0dajNRR5mfAc4GGlmqmxGE9Y`)
+    fetch(`https://api.nytimes.com/svc/topstories/v2/sports.json?api-key=8e4wCNCI0dajNRR5mfAc4GGlmqmxGE9Y`)
     .then(res=> res.json())
     .then((data)=> {
         console.log(data)
@@ -58,7 +58,7 @@ let getSideNews = () => {
         // console.log(news_div)
         side_news_div.innerHTML = "";
 
-        for (let i = 1; i < 5; i++) {
+        for (let i = 1; i < 7; i++) {
             let html = `<article class="just-in">
                 <div class="just-in-news">
                     <h2>${data['results'][i]['abstract']}</h2>
@@ -80,7 +80,7 @@ function getRandomInt(min, max) {
 }
 
 let getMainNews = () => {
-    fetch(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=8e4wCNCI0dajNRR5mfAc4GGlmqmxGE9Y`)
+    fetch(`https://api.nytimes.com/svc/news/v3/content/nyt/sports.json?api-key=8e4wCNCI0dajNRR5mfAc4GGlmqmxGE9Y`)
     .then(res=> res.json())
     .then((data)=> {
         // news_div.textContent = data['results'][0]['abstract']
@@ -90,7 +90,7 @@ let getMainNews = () => {
         for (let i = 0; i < 10; i++) {
             let html = `
                 <article class="article">
-                    <img src="${data['results'][i]['multimedia'][0]['url']}"></img>
+                    <img src="${data['results'][i]['multimedia'][1]['url']}"></img>
                     <h1>${data['results'][i]['title']}</h1>
                 </article>`
             if (i == 8 && i == 9) {
