@@ -203,13 +203,9 @@
                 // Sign-out successful.
                 swal("Success", "Signed out successfully!", "success")
                 setTimeout(() => {
-                    alert("Redirecting...")
-                },
-                    2 * 1000)
-                setTimeout(() => {
                     window.open("../form/form.html", "_self")
                 },
-                    2 * 1000)
+                    3 * 1000)
             }).catch((error) => {
                 // An error happened.
                 console.log(error);
