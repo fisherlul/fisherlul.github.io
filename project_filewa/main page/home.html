@@ -198,7 +198,6 @@
         const auth = getAuth()
 
         document.querySelector("button#logout").onclick = () => {
-            // console.log("hello");
             signOut(auth).then(() => {
                 // Sign-out successful.
                 swal("Success", "Signed out successfully!", "success")
