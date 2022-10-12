@@ -48,12 +48,17 @@
   
   .article:nth-child(1)>hr:last-child {
     margin-right: 20%;
-    height: 28px
+    max-height: 28px
   }
   
   .article:nth-child(8) {
     grid-column: span 3 / -1;
-    background: rgba(255,200,255,0.3)
+    max-width: 600px;
+    background: #fff
+  }
+
+  .article:nth-child(9), .article:nth-child(10){
+    max-height: 220px
   }
   
   .article:nth-child(12) {

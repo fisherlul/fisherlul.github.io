@@ -24,7 +24,7 @@ const main_news_div = document.querySelector('.archive')
 const side_news_div = document.querySelector('#just-in')
 
 let getDataNews = () => {
-    fetch(`https://api.nytimes.com/svc/topstories/v2/sports.json?api-key=8e4wCNCI0dajNRR5mfAc4GGlmqmxGE9Y`)
+    fetch(`https://api.nytimes.com/svc/topstories/v2/business.json?api-key=8e4wCNCI0dajNRR5mfAc4GGlmqmxGE9Y`)
     .then(res=> res.json())
     .then((data)=> {
         console.log(data)
@@ -80,7 +80,7 @@ function getRandomInt(min, max) {
 }
 
 let getMainNews = () => {
-    fetch(`https://api.nytimes.com/svc/news/v3/content/nyt/sports.json?api-key=8e4wCNCI0dajNRR5mfAc4GGlmqmxGE9Y`)
+    fetch(`https://api.nytimes.com/svc/news/v3/content/nyt/business.json?api-key=8e4wCNCI0dajNRR5mfAc4GGlmqmxGE9Y`)
     .then(res=> res.json())
     .then((data)=> {
         // news_div.textContent = data['results'][0]['abstract']

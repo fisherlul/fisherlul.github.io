@@ -6,17 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Daily Bugle</title>
-    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./business.css">
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
     <!-- fontawesome -->
     <link href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css" rel="stylesheet">
-    <!-- weather-->
-    <link rel="stylesheet" href="../weather/weather.css">
     <!-- css -->
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="/project_filewa/main page/index.css">
     <style>
         #show-user {
             margin-left: 80px;
@@ -53,11 +51,11 @@
             <div class="nav-bar" id="nav-bar">
                 <nav>
                     <ul>
-                        <li><a href="./home.html">Home</a></li>
+                        <li><a href="/project_filewa/main page/home.html">Home</a></li>
                         <li><a href="../currency table/table.html">Crypto</a></li>
                         <li><a href="../main page/other topics/sports/sports.html">sports</a></li>
                         <li><a href="#">worldwide</a></li>
-                        <li><a href="../main page/other topics/business/business.html">business</a></li>
+                        <li><a href="./business.html">business</a></li>
                         <li><a href="#">category</a></li>
                         <button id="logout">Log Out</button>
                         <div id="show-user">
@@ -90,7 +88,7 @@
 
     <main>
         <section class="main-container-left">
-            <h2 class="title 1">Latest Stories</h2>
+            <h2 class="title 1">Top Stories</h2>
             <div id="main-news" class="container-top-left">
 
             </div>
@@ -101,26 +99,9 @@
         </section>
 
         <section class="main-container-right">
-            <h2 class="title-latest">Most Popular</h2>
+            <h2 class="title-latest">Latest Stories</h2>
             <div id="just-in">
 
-            </div>
-            <div class="weather">
-                <section class="top-banner">
-                    <div class="container">
-                        <h1 class="weather_title">World Weather</h1>
-                        <form>
-                            <input type="text" placeholder="Search for a city" autofocus>
-                            <button type="submit">SUBMIT</button>
-                            <span class="msg"></span>
-                        </form>
-                    </div>
-                </section>
-                <section class="ajax-section">
-                    <div class="container">
-                        <ul class="cities"></ul>
-                    </div>
-                </section>
             </div>
         </section>
     </main>
@@ -175,11 +156,10 @@
 
         <p>Copyright &copy; dailybugle.com, 2021-2022 The Daily Bugle</p>
     </footer>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script scr="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
     <script src="../weather/weather.js"></script>
-    <script src="./main.js"></script>
+    <script src="./business.js"></script>
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
         import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
@@ -201,11 +181,11 @@
             // console.log("hello");
             signOut(auth).then(() => {
                 // Sign-out successful.
-                swal("Success", "Signed out successfully!", "success")
+                alert("Signed out successfully.")
                 setTimeout(() => {
                     alert("Redirecting...")
                 },
-                    2 * 1000)
+                    1 * 1000)
                 setTimeout(() => {
                     window.open("../form/form.html", "_self")
                 },

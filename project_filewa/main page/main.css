@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display&family=Ubuntu:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Roboto+Slab:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus&display=swap');
 *{
     box-sizing: border-box;
     padding: 0;
@@ -285,8 +286,10 @@ main a:hover{
 }
 
 .article h1{
-    font-size: 13px;
+    font-size: 14px;
     margin-top: 10px;
+    font-family: 'Gentium Book Plus', serif;
+    color: black
 }
 
 
@@ -628,6 +631,7 @@ footer > p{
     font-family: 'Oswald', sans-serif;
     font-size: 20px
 }
+
 #logout:hover {
     text-decoration: underline;
 }

@@ -1,6 +1,6 @@
 let news_div = document.querySelector(".news_div")
 
-fetch(`https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=8e4wCNCI0dajNRR5mfAc4GGlmqmxGE9Y`)
+fetch(`https://skysportsapi.herokuapp.com/sky/getnews/football/v1.0/`)
     .then(res=> res.json())
     .then((data)=> {
         // news_div.textContent = data['results'][0]['abstract']
@@ -20,21 +20,6 @@ fetch(`https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=8e4wCNCI
         //     news_div.innerHTML += html;
         // }
     })
-
-// let renderDataNews = (data, query) => {
-//     let domSide = document.querySelector(query)
-//     domSide.innerHTML = "";
-
-//     let html = `<article>
-//         <div>
-//             <h3>${data['results'][0]['abstract']}</h3>
-//             <p>${data['results'][0]['byline']}</p>
-//             <a href = "#">Read More <span>>></span></a>
-//         </div>
-//     </article>`
-
-//     domSide.innerHTML += html;
-// };
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
