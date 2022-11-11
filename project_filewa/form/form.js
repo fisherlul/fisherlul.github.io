@@ -157,15 +157,15 @@ formSignup.onsubmit = async function (e) {
             .then((userCredential) => {
                 setTimeout(
                     () => {
-                        swal("Success!", "You signed up successfully!", "success");
+                        Swal.fire('Signed up successfully!', 'success');
                     },
-                    2 * 1000
+                    3 * 1000
                 );
                 setTimeout(
                     () => {
                         window.open("../main page/home.html", "_self")
                     },
-                    3 * 1000
+                    5 * 1000
                 );
             })
             .catch((error) => {
@@ -179,21 +179,3 @@ formSignup.onsubmit = async function (e) {
         localStorage.setItem('user', JSON.stringify(user)); 
     }
 }
-
-// formSignup.addEventListener('click', (e) => {
-//     e.preventDefault();
-    
-//     let userfb = {
-//         username: username,
-//         email: email_signup,
-//         password: password_signup,
-//     }
-//     .then(() => {
-//         let ref = collection(db, "user");
-//         addDoc(ref, userfb).then((result) => {
-//             console.log('Succeed!')
-//         }).catch((err) => {
-//             console.log(err);
-//         });
-//     })
-// })

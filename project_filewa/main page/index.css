@@ -1,5 +1,5 @@
 .banner {
-    background: #001628;
+    background: #000066;
     color: #777;
     padding: 4em;
     font-family: sans-serif;
@@ -32,6 +32,12 @@
     grid-gap: 1em;
     grid-auto-flow: dense;
   }
+
+  .Archive {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
   
   .article {
     padding: 1em;
@@ -39,7 +45,7 @@
     box-shadow:
       0 5px 10px rgba(0, 0, 0, 0.1),
       0 20px 20px rgba(0, 0, 0, 0.05);
-    max-height: 350px
+    max-height: 370px
   }
   
   .article:nth-child(1)>hr.image {
@@ -53,14 +59,27 @@
   
   .article:nth-child(8) {
     grid-column: span 3 / -1;
-    max-width: 600px;
-    background: #fff
+    max-width: 580px;
+    max-height: 400px;
+    background: #fff;
   }
 
   .article:nth-child(9), .article:nth-child(10){
-    max-height: 230px
+    max-height: 250px
   }
   
+  .article:nth-child(8) img{
+    width: 250px;
+    height: 180px;
+    font-size: 22px
+  }
+
+  .special_images div{
+    display: inline-block;
+    max-width: 260px;
+    margin: 10px;
+  }
+
   .article:nth-child(12) {
     grid-column: 1 / 4;
     background: rgba(255,200,255,0.3)
@@ -90,4 +109,8 @@
   .title-latest {
     margin-left: -30px;
     text-transform: uppercase;
+  }
+
+  footer {
+    background-color: #00004d
   }

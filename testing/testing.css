@@ -2,14 +2,14 @@ body{
   margin: 40px;
 }
 
-button{
+.btn-button{
   cursor: pointer;
   outline: 0;
   color: #AAA;
 
 }
 
-.btn:focus {
+.btn-button:focus {
   outline: none;
 }
 
