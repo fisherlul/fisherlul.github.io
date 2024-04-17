@@ -1,0 +1,1 @@
+print(puissance(3, 2))
