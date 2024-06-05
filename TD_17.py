@@ -120,17 +120,19 @@ flocon(4)
 def affiche(n, positions):
     i = 0
     j = 0
-    while j < n:
-        if j == len(positions):
-            break
-        else:
-            for _ in range(positions[i]):
-                print('.', end = '')
-            print('X', end = '')
-            for _ in range(n-positions[i]-1):
-                print('.', end = '')
-            print('\n')
+    while j < len(positions):
+        for _ in range(positions[i]):
+            print('.', end = '')
+        print('X', end = '')
+        for _ in range(n-positions[i]-1):
+            print('.', end = '')
+        print('\n')
         i += 1
+        j += 1
+    while j < n:
+        for k in range(n):
+            print('.', end = '')
+        print('\n')
         j += 1
 
 affiche(8, [5, 1, 6, 0, 3])

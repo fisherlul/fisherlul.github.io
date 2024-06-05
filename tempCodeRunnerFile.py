@@ -1,7 +1,6 @@
-#Exercice 4:
-# def affiche(n, positions):
-#     for i in range(n):
-#         for j in range(positions[i]):
-#             print('.', end = '')
-#         print('X', end = '')
-#         for k in range()
+for _ in range(positions[i]):
+            print('.', end = '')
+        print('X', end = '')
+        for _ in range(n-positions[i]-1):
+            print('.', end = '')
+        print('\n')
