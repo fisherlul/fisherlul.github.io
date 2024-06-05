@@ -117,9 +117,20 @@ def flocon(n):
 flocon(4)
 
 # #Exercice 4:
-# def affiche(n, positions):
-#     for i in range(n):
-#         for j in range(positions[i]):
-#             print('.', end = '')
-#         print('X', end = '')
-#         for k in range()
+def affiche(n, positions):
+    i = 0
+    j = 0
+    while j < n:
+        if j == len(positions):
+            break
+        else:
+            for _ in range(positions[i]):
+                print('.', end = '')
+            print('X', end = '')
+            for _ in range(n-positions[i]-1):
+                print('.', end = '')
+            print('\n')
+        i += 1
+        j += 1
+
+affiche(8, [5, 1, 6, 0, 3])
