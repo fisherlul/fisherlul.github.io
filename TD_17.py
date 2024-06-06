@@ -135,4 +135,32 @@ def affiche(n, positions):
         print('\n')
         j += 1
 
-affiche(8, [5, 1, 6, 0, 3])
+def en_prise(x1, y1, x2, y2):
+    # Vérifier la même ligne
+    if x1 == x2:
+        return True
+    # Vérifier la même colonne
+    if y1 == y2:
+        return True
+    # Vérifier la même diagonale
+    if abs(x1 - x2) == abs(y1 - y2):
+        return True
+    return False
+
+def est_libre(x1, y1, positions):
+    for (x2, y2) in positions:
+        if en_prise(x1, y1, x2, y2):
+            return False
+    return True
+
+def place_dames(n, positions):
+    if len(positions) == n:
+        print(positions)
+        return 1
+
+    solutions = 0
+    row = len(positions)
+    for col in range(n):
+        if est_libre(row, col, positions):
+            solutions += place_dames(n, positions + [(row, col)])
+    return solutions
