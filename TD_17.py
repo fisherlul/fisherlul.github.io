@@ -164,3 +164,5 @@ def place_dames(n, positions):
         if est_libre(row, col, positions):
             solutions += place_dames(n, positions + [(row, col)])
     return solutions
+
+print(place_dames(8, [5, 1, 6, 0, 3, 8, 7, 2]))
