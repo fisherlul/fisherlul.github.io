@@ -1,0 +1,69 @@
+def dichotomie(valeur, liste, debut, fin):
+    if debut > fin: # condition
+        return False
+    else:
+        milieu = (debut + fin)//2
+        if valeur == liste[milieu]: 
+            return True
+        elif valeur < liste[milieu]:
+            return dichotomie(valeur, liste, debut, milieu - 1)
+        else:
+            return dichotomie(valeur, liste, milieu + 1, fin)
+        
+def is_in_tree(val, t):
+    if len(t) == 0:
+        return False
+    else:
+        if t[0] == val:
+            return True
+        else:
+            res = is_in_tree(val, t[1]) or is_in_tree(val, t[2]) # checking in other branches
+        return res
+    
+def is_in_abr(valeur, abr):
+    if len(abr) == 0:
+        return False
+    elif abr[0] == valeur:
+        return True
+    else: 
+        if valeur < abr[0]:
+            return is_in_abr(valeur, abr[1])
+        else:
+            return is_in_abr(valeur, abr[2])
+        
+# sample = ["Bien ", "jour !", "ont", "bon", "le", "s", " "] # keywords
+# txt = [0, 4, 6, 3, 1, 6, 4, 5, 6, 3, 3, 5, 6, 5, 2, 6, 3, 5] # encoded text
+
+def decode(t, samples):
+    res = ''
+    for i in range(len(t)):
+        res += samples[t[i]]
+    return res
+        
+def est_le_bon_motif(t1, start, t2):
+    i = 0
+    while i < len(t2):
+        if t1[start + i] != t2[i]:
+            return False
+        else:
+            i += 1
+    return True
+
+def get_num_motif(txt, start, samples):
+    i = 0
+    while i < len(samples):
+        res = est_le_bon_motif(txt, start, samples[i])
+        if res == True:
+            i += 1
+    return i
+
+def encode(txt, samples):
+    res = []
+    i = 0
+    while i < len(txt):
+        sample = get_num_motif(txt, i, samples)
+        res.append(sample)
+        i += len(samples[sample])
+    return res
+
+print(encode("efghabcdbbcd", ["abcdefg", "efgh", "bcd", "a","b","c","d","e","f","g","h"])) # Affiche : [1, 3, 2, 4, 2]
