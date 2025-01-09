@@ -8,9 +8,9 @@ from shapely.geometry import Point, Polygon, shape
  
 fichier_arbres = "arbres_metropole.json"
 
-def  lire_arbres():
+def lire_arbres():
     with open('data/arbres_metropole.json','r', encoding='utf_8') as mon_fichier:
-        contenu=json.load(mon_fichier)['values']
+        contenu = json.load(mon_fichier)['values']
     return contenu
 
  
