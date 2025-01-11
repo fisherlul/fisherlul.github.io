@@ -1,4 +1,6 @@
 import csv
+import random
+
 def dico_interactions(chemin_fichier, interaction=str):
     """
     Renvoie un dictionnaire avec les interactions entre les mots du fichier passé en argument.
@@ -18,6 +20,7 @@ def dico_interactions(chemin_fichier, interaction=str):
     
     return dico_interactions
 
+print("\nDico des favorisations:")
 print(dico_interactions('APP/Données/data_arcs.csv', "favorise"))
 
 def trouver_le_chemin_min(p_init, adjacents):
@@ -37,10 +40,40 @@ def trouver_le_chemin_min(p_init, adjacents):
             for plante in adjacents[parent]:
                 if plante not in file_traitee:
                     file_attente.append(plante)
-                    dico[plante] = (dico.get(parent, [parent]) + [plante])
+                    dico[plante] = (dico.get(parent, [parent]) + [plante]) #add plante to path from parent, create new path if parent not in dico
                     file_traitee.append(plante)
         file_attente.pop(0)
     
     return dico
 
-print(trouver_le_chemin_min('prunier', dico_interactions('APP/Données/data_arcs.csv', "favorise")))
+favorise_interactions = dico_interactions('APP/Données/data_arcs.csv', "favorise")
+print("\n")
+print(trouver_le_chemin_min('prunier', favorise_interactions))
+
+print("\nTesting trouver_le_chemin_min:")
+# Test with different starting plants
+favorise_interactions = dico_interactions('APP/Données/data_arcs.csv', "favorise")
+print("Starting from 'prunier':")
+print(trouver_le_chemin_min('prunier', favorise_interactions))
+print("\nStarting from 'tomate':")
+print(trouver_le_chemin_min('tomate', favorise_interactions))
+
+# Test with a custom adjacency list
+custom_adjacents = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F'],
+    'D': ['G'],
+    'E': [],
+    'F': [],
+    'G': []
+}
+print("\nCustom adjacency list test:")
+print(trouver_le_chemin_min('A', custom_adjacents))
+
+##### DOT graphing test #####
+# random.seed(14)
+# print("digraph {")
+# for i in range(38):
+#     print(random.randint(1,24), "->", random.randint(1,24))
+# print("}")

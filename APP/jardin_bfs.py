@@ -46,7 +46,7 @@ def trouver_le_chemin_bfs(s_init, adjacents):
     return dico
 
 if __name__ == '__main__':
-    file_path = './data_arcs_poids.csv'
+    file_path = 'APP/Données/data_arcs_poids.csv'
     graphe = construct_graphe(file_path)
 
     s_deb, s_fin = 'prunier', 'sauge'

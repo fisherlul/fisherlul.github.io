@@ -23,16 +23,14 @@ from chemins import dico_interactions, trouver_le_chemin_min
 def calcul_liste_longueurs(liste_paires_depart_arrivee):
     """
     Lire le fichier 'data_arcs.csv' dans le repertoire courant puis
-    calcule la longueur de plus court chemin pour chaque paire
+calcule la longueur de plus court chemin pour chaque paire
     (depart, arrivee) de la liste liste_paires_depart_arrivee.
 
-    Par convention cette longueur sera egale a None si il n'y a pas
+    La longueur sera egale a None si il n'y a pas 
     de chemin de 'depart' a 'arrivee'.
-    Les plus courts chemins sont cherches en utilisant seulement les arcs   
-    'favorise' du graphe.
     
-    :param liste liste_paires_depart_arrivee, list
-    return: la liste des longueurs obtenues, list.
+    :param liste liste_paires_depart_arrivee, list[set]
+    return: la liste des longueurs obtenues, list
     """
     res = []
     dico_fav = dico_interactions('APP/Données/data_arcs.csv', "favorise")
