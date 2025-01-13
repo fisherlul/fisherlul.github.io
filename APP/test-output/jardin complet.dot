@@ -1,4 +1,4 @@
-digraph "Graphe de ['prunier', 'cerisier', 'rue fetide', 'rosier', 'ciboulette', 'carotte', 'sauge', 'carotte', 'ail', 'prunier']" {
+digraph "Graphe du jardin complet" {
 	prunier
 	prunier -> cerisier
 	cerisier

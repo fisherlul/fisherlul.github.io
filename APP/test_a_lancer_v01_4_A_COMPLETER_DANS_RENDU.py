@@ -33,7 +33,7 @@ calcule la longueur de plus court chemin pour chaque paire
     return: la liste des longueurs obtenues, list
     """
     res = []
-    dico_fav = dico_interactions('APP/donnees/data_arcs.csv', "favorise")
+    dico_fav = dico_interactions("favorise")
     for plante_set in liste_paires_depart_arrivee:
         depart, arrivee = plante_set
         chemin_min = trouver_le_chemin_min(depart, dico_fav)

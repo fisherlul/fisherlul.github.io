@@ -116,7 +116,7 @@ def dot_graphe(jardin):
     Return: None
     """
     dico_favorise = dico_interactions_poids("favorise")
-    dot = gr.Digraph(f'Graphe de {jardin}')
+    dot = gr.Digraph(f'Graphe du jardin complet')
 
     # Base du jardin
     for i in range(len(jardin)-1):
@@ -134,7 +134,7 @@ def dot_graphe(jardin):
                         dot.edge(plante, p_fav, color='blue')
                         edges_drawn.add((plante, p_fav))
 
-    dot.render('test-output/jardin complet', view=False)
+    dot.render('APP/test-output/jardin complet.dot', view=False)
 
 ####### Tester ######
 def main(start_vertex, end_vertex):
@@ -156,4 +156,6 @@ def main(start_vertex, end_vertex):
 if __name__ == "__main__":
     main = main('prunier', 'sauge')
     dot_graphe(main)
+
+
     
