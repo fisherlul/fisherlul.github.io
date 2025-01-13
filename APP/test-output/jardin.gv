@@ -1,0 +1,8 @@
+digraph "Graphe de prunier" {
+	prunier -> framboisier [color=blue]
+	prunier -> cerisier [color=blue]
+	"fusain d'europe" -> prunier [color=red]
+	erable -> prunier [color=red]
+	orme -> prunier [color=red]
+	noisetier -> prunier [color=red]
+}

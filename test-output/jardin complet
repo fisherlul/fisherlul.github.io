@@ -1,0 +1,29 @@
+digraph "Graphe de ['prunier', 'cerisier', 'rue fetide', 'rosier', 'ciboulette', 'carotte', 'sauge', 'carotte', 'ail', 'prunier']" {
+	prunier
+	prunier -> cerisier
+	cerisier
+	cerisier -> "rue fetide"
+	"rue fetide"
+	"rue fetide" -> rosier
+	rosier
+	rosier -> ciboulette
+	ciboulette
+	ciboulette -> carotte
+	carotte
+	carotte -> sauge
+	sauge
+	sauge -> carotte
+	carotte
+	carotte -> ail
+	ail
+	ail -> prunier
+	cerisier -> raifort [color=blue]
+	rosier -> thym [color=blue]
+	ciboulette -> pecher [color=blue]
+	ciboulette -> courge [color=blue]
+	carotte -> poireau [color=blue]
+	carotte -> absinthe [color=blue]
+	sauge -> haricot [color=blue]
+	sauge -> agrume [color=blue]
+	ail -> pecher [color=blue]
+}
