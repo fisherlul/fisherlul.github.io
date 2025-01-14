@@ -1,6 +1,6 @@
 ########################################################
 import csv
-from chemins import dico_interactions, trouver_le_chemin_min
+from jardin import dico_interactions, trouver_le_chemin_min
 # Definir ici la fonction calcul_liste_longueurs(liste_paires_depart_arrivee)
 # qui lit le fichier 'data_arcs.csv' dans le repertoire courant puis
 # calcule la longueur de plus court chemin pour chaque paire
@@ -33,7 +33,7 @@ calcule la longueur de plus court chemin pour chaque paire
     return: la liste des longueurs obtenues, list
     """
     res = []
-    dico_fav = dico_interactions("favorise")
+    dico_fav = dico_interactions()
     for plante_set in liste_paires_depart_arrivee:
         depart, arrivee = plante_set
         chemin_min = trouver_le_chemin_min(depart, dico_fav)

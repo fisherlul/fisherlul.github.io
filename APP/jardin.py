@@ -72,7 +72,7 @@ def trouver_le_chemin_min(p_init, adjacents):
             for plante in adjacents[parent]:
                 if plante not in file_traitee:
                     file_attente.append(plante)
-                    dico[plante] = (dico.get(parent, [parent]) + [plante]) #add plante to path from parent, create new path if parent not in dico
+                    dico[plante] = (dico.get(parent, [parent]) + [plante]) #ajouter plante au chemin depuis parent, créer un nouveau chemin si parent n'est pas dans dico
                     file_traitee.append(plante)
         file_attente.pop(0)
     
@@ -115,7 +115,7 @@ def dot_graphe(jardin):
     :param jardin: un jardin complet, list
     Return: None
     """
-    dico_favorise = dico_interactions_poids("favorise")
+    dico_favorise = dico_interactions_poids()
     dot = gr.Digraph(f'Graphe du jardin complet')
 
     # Base du jardin
@@ -141,7 +141,7 @@ def dot_graphe(jardin):
 ###### Tester ######
 def main(start_vertex, end_vertex):
     # Définir les sommets de départ et de fin
-    dico_favorise = dico_interactions_poids("favorise")
+    dico_favorise = dico_interactions_poids()
 
     chemin_1 = trouver_chemin_min_dijkstra(start_vertex, end_vertex, dico_favorise)
     chemin_2 = trouver_chemin_min_dijkstra(end_vertex, start_vertex, dico_favorise)
@@ -154,7 +154,7 @@ def main(start_vertex, end_vertex):
         return chemin_1 + chemin_2[1:]
 
 if __name__ == "__main__":
-    main = main('cardon', 'menthe')
+    main = main('radis', 'celeri')
     dot_graphe(main)
 
 

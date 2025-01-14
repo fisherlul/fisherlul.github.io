@@ -1,2 +1,13 @@
 digraph "Graphe du jardin complet" {
+	radis
+	radis -> celeri
+	celeri
+	celeri -> courgette
+	courgette
+	courgette -> radis
+	radis -> cresson [color=blue]
+	radis -> tomate [color=blue]
+	celeri -> poireau [color=blue]
+	celeri -> courge [color=blue]
+	courgette -> mais [color=blue]
 }
