@@ -1,5 +1,6 @@
 import csv
 import graphviz as gr
+import timeit
 
 ##### Creer dictionnaires #####
 def dico_interactions(interaction='favorise') -> dict:
@@ -136,7 +137,7 @@ def dot_graphe(jardin):
                             dot.edge(plante, p_fav, color='blue')
                             edges_dessines.add((plante, p_fav))
 
-    dot.render('APP/test-output/jardin complet.dot', view=False)
+    dot.render('APP/graphe/jardin complet.dot', view=False)
 
 ###### Tester ######
 def main(start_vertex, end_vertex):
@@ -154,8 +155,6 @@ def main(start_vertex, end_vertex):
         return chemin_1 + chemin_2[1:]
 
 if __name__ == "__main__":
-    main = main('oignon', 'celeri')
+    main = main('celeri', 'tomate')
     dot_graphe(main)
-
-
     

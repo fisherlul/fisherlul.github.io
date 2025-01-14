@@ -1,0 +1,14 @@
+digraph "Graphe du jardin complet" {
+	"achillee millefeuille"
+	"achillee millefeuille" -> mais
+	mais
+	mais -> haricot
+	haricot
+	haricot -> celeri
+	celeri
+	celeri -> tomate
+	tomate
+	tomate -> chou
+	chou
+	chou -> "achillee millefeuille"
+}
