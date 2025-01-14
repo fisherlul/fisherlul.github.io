@@ -154,7 +154,7 @@ def main(start_vertex, end_vertex):
         return chemin_1 + chemin_2[1:]
 
 if __name__ == "__main__":
-    main = main('radis', 'celeri')
+    main = main('oignon', 'celeri')
     dot_graphe(main)
 
 

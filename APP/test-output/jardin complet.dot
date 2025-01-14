@@ -1,13 +1,15 @@
 digraph "Graphe du jardin complet" {
+	oignon
+	oignon -> radis
 	radis
 	radis -> celeri
 	celeri
-	celeri -> courgette
-	courgette
-	courgette -> radis
+	celeri -> courge
+	courge
+	courge -> oignon
+	oignon -> "trefle blanc" [color=blue]
 	radis -> cresson [color=blue]
 	radis -> tomate [color=blue]
 	celeri -> poireau [color=blue]
-	celeri -> courge [color=blue]
-	courgette -> mais [color=blue]
+	courge -> ciboulette [color=blue]
 }
