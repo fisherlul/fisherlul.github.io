@@ -1,25 +1,7 @@
 import csv
 import graphviz as gr
-import timeit
 
 ##### Creer dictionnaires #####
-def dico_interactions(interaction='favorise') -> dict:
-    """
-    Renvoie un dictionnaire avec les interactions entre les mots du fichier passé en argument.
-    :param interaction: str
-    return: une dictionnaire avec les interactions entre des plantes, dict[str, list]
-    """
-    with open('APP/donnees/data_arcs.csv', 'r', newline='') as csvfile:
-        reader = csv.reader(csvfile, delimiter=';')
-        reader.__next__()
-
-        dico_interactions = {}
-        for row in reader:
-            if row[1] == interaction:
-                dico_interactions[row[0]] = dico_interactions.get(row[0], []) + [row[2]]
-    
-    return dico_interactions
-
 def dico_interactions_poids(interaction='favorise') -> dict:
     """
     Renvoie un dictionnaire avec les interactions entre les mots du fichier passé en argument et les poids des interactions.
@@ -37,7 +19,7 @@ def dico_interactions_poids(interaction='favorise') -> dict:
                 dico_interactions[row[0]][row[2]] = int(row[3])
         
     return dico_interactions
-print(dico_interactions_poids()['framboisier'])
+
 ##### Avec auxiliaires #####
 def interaction_especes(jardin: list, dico_interactions: dict) -> dict:
     """
@@ -55,37 +37,13 @@ def interaction_especes(jardin: list, dico_interactions: dict) -> dict:
     return dico_jardin_interaction
 
 ##### Chemins #####
-def trouver_le_chemin_min(p_init, adjacents):
-    """
-    Trouver le chemin qui passe par moins de sommets possibles pour la plante initiale.
-    :param p_init: plante de départ, int
-    :param adjacents: dictionnaire, dict[int, list]
-    
-    :return: un dictionnaire des chemin de p_init à toutes les plantes, dict[int, list]
-    """
-    dico = {}
-    file_attente = [p_init]
-    file_traitee = []
-
-    while file_attente:
-        parent = file_attente[0]
-        if parent in adjacents.keys(): 
-            for plante in adjacents[parent]:
-                if plante not in file_traitee:
-                    file_attente.append(plante)
-                    dico[plante] = (dico.get(parent, [parent]) + [plante]) #ajouter plante au chemin depuis parent, créer un nouveau chemin si parent n'est pas dans dico
-                    file_traitee.append(plante)
-        file_attente.pop(0)
-    
-    return dico
-
 def trouver_chemin_min_dijkstra(p_init, p_end, adjacents):
     """
     Trouver le chemin qui passe par des sommets, avec la somme des indices le plus petit
     possible.
-    :param p_init: plante de départ, int
+    :param p_init: plante de départ, str
     :param adjacents: dictionnaire, dict[int, dict[int, int]]
-    :param p_end: plante de fin, int
+    :param p_end: plante de fin, str
 
     :return: un dictionnaire des chemin, extrait pour le chemin de p_init à p_end, dict[int, list], None s'il n'existe pas de chemin.
     """
@@ -137,7 +95,7 @@ def dot_graphe(jardin):
                             dot.edge(plante, p_fav, color='blue')
                             edges_dessines.add((plante, p_fav))
 
-    dot.render('APP/graphe/jardin complet.dot', view=False)
+    dot.render('APP/graphe/avec_poids/jardin complet (avec poids).dot', view=False)
 
 ###### Tester ######
 def main(start_vertex, end_vertex):
@@ -149,12 +107,12 @@ def main(start_vertex, end_vertex):
     
     # Vérifier si un chemin existe
     if chemin_1 == None or chemin_2 == None:
-        print("Pas de chemin")
+        print(f"Pas de chemin de {start_vertex} à {end_vertex}")
     else:
-        print(f"Le chemin le plus court de {start_vertex} à {end_vertex}: {chemin_1 + chemin_2[1:]}")
+        print(f"Le chemin le plus court de {start_vertex} à {end_vertex}: {chemin_1}")
         return chemin_1 + chemin_2[1:]
 
 if __name__ == "__main__":
-    main = main('celeri', 'tomate')
+    main = main('pissenlit', 'trefle blanc')
     dot_graphe(main)
     

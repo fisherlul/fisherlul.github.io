@@ -1,0 +1,20 @@
+digraph "Graphe du jardin complet" {
+	pissenlit
+	pissenlit -> ail
+	ail
+	ail -> "poirier commun"
+	"poirier commun"
+	"poirier commun" -> "trefle blanc"
+	"trefle blanc"
+	"trefle blanc" -> "fraisier des bois"
+	"fraisier des bois"
+	"fraisier des bois" -> ail
+	ail
+	ail -> pissenlit
+	ail -> pecher [color=blue]
+	ail -> rosier [color=blue]
+	"poirier commun" -> "nerprun alaterne" [color=blue]
+	"trefle blanc" -> mais [color=blue]
+	"fraisier des bois" -> poireau [color=blue]
+	"fraisier des bois" -> pecher [color=blue]
+}

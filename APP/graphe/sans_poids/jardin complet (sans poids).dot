@@ -1,0 +1,18 @@
+digraph "Graphe du jardin complet" {
+	prunier
+	prunier -> framboisier
+	framboisier
+	framboisier -> souci
+	souci
+	souci -> haricot
+	haricot
+	haricot -> chou
+	chou
+	chou -> sauge
+	sauge
+	sauge -> carotte
+	carotte
+	carotte -> ail
+	ail
+	ail -> prunier
+}

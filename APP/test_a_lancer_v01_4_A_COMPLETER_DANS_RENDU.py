@@ -1,6 +1,6 @@
 ########################################################
 import csv
-from jardin import dico_interactions, trouver_le_chemin_min
+from jardin_sans_poids import dico_interactions, trouver_le_chemin_min
 # Definir ici la fonction calcul_liste_longueurs(liste_paires_depart_arrivee)
 # qui lit le fichier 'data_arcs.csv' dans le repertoire courant puis
 # calcule la longueur de plus court chemin pour chaque paire
@@ -23,7 +23,7 @@ from jardin import dico_interactions, trouver_le_chemin_min
 def calcul_liste_longueurs(liste_paires_depart_arrivee):
     """
     Lire le fichier 'data_arcs.csv' dans le repertoire courant puis
-calcule la longueur de plus court chemin pour chaque paire
+    calcule la longueur de plus court chemin pour chaque paire
     (depart, arrivee) de la liste liste_paires_depart_arrivee.
 
     La longueur sera egale a None si il n'y a pas 
@@ -66,7 +66,20 @@ def run_test():
     #reference_longueurs_chemins_min = {('prunier', 'sauge'): 6, ('cardon', 'menthe'): None, ('pissenlit', 'trefle blanc'): 4}
     
     # Exemple de jeu de test plus gros:
-    reference_longueurs_chemins_min = {('prunier', 'sauge'): 6, ('pissenlit', 'trefle blanc'): 4, ("oeillet d'inde", 'asperge'): None, ('ciboulette chinoise', 'marjolaine'): None, ('trefle blanc', 'panais'): 3, ('melon', 'trefle blanc'): 4, ('piment', 'poivron'): None, ('thym', "rosier d'inde"): 4, ('celeri', 'pissenlit'): 5, ('poivron', 'laitue'): 3, ('lavande', 'topinambour'): 4, ('courge', 'pissenlit'): 5, ('coriandre', 'tournesol'): 4, ('cardon', 'genet'): None, ('menthe', 'piment'): 5, ('mais', 'ciboulette chinoise'): 4, ('cosmos', 'thym'): 3, ("oeillet d'inde", 'patate douce'): None, ('basilic', 'pommier'): 4, ('cornichon', 'patate douce'): None, ('poireau', 'menthe'): None, ("rosier d'inde", 'pasteque'): None, ("oeillet d'inde", 'betterave'): None, ('laitue', 'cornichon'): 3, ('pasteque', 'panais'): 3, ('poivron', 'courgette'): 4, ('origan', 'haricot'): 3, ('carotte', 'groseillier'): 3, ('courge', 'radis'): 3, ('patate douce', 'melisse citronnelle'): 4, ('chou-rave', 'pomme de terre'): None, ('vigne', 'cassis'): 4, ('courgette', 'chenopode blanc'): 5, ('lin', 'cumin'): 4, ('agrume', 'morelle de balbis'): 6, ('cresson', 'sarriette'): 4, ('kiwi', 'artichaut'): 4, ('oignon', 'inule visqueuse'): 4, ('tanaisie commune', 'melisse citronnelle'): 5, ('aneth', 'lavande'): 5, ('anis', 'cumin'): 4, ('chenopode blanc', 'roquette'): None, ('lavande', 'sarriette'): 5, ('origan', 'courgette'): 4, ("oeillet d'inde", 'pomme de terre'): None, ('prunier', 'agrume'): 6, ('kiwi', 'poireau'): 4, ('persil', 'haricot'): 3, ('cerfeuil commun', 'olivier'): 5, ('sarrasin', 'menthe'): None}
+    reference_longueurs_chemins_min = {
+        ('oignon', 'souci'): 4, ('cresson', 'phacelie'): 5, ('ail', 'piment'): 4, ('pois', 'thym'): 4,
+        ('chou', 'coriandre'): 2, ('artichaut', 'inule visqueuse'): 4, ('groseillier', 'poirier commun'): 4, ('carotte', 'bette'): 4,
+        ('matricaire inodore', 'absinthe'): None, ('nerprun alaterne', 'coquelicot'): None, ('ail', 'basilic'): 4, ('celeri', 'topinambour'): 5,
+        ('tanaisie commune', 'pecher'): 2, ('noyer', 'kiwi'): None, ('tomate', 'pois'): 3, ('fraisier des bois', "oeillet d'inde"): 4,
+        ('aubergine', 'kiwi'): 4, ('ail', 'coquelicot'): 4, ('souci', 'panais'): 4, ('pommier', 'courge'): 5, ("rosier d'inde", 'lavande'): None,
+        ('panais', 'bourrache officinale'): 4, ('poireau', 'origan'): 4, ('camomille allemande', 'phacelie'): 3, ('morelle de balbis', 'echalote'): 5,
+        ('cardon', 'tomate'): None, ('coriandre', 'moutarde'): 3, ('bette', 'carotte'): None, ('coquelicot', 'prunier'): None, ('epinard', 'capucine'): 3,
+        ('rue fetide', 'ail'): 3, ('laitue', 'roquette'): 3, ('moutarde', 'cumin'): 3, ('cerisier', 'noyer'): 6, ('poirier commun', 'chanvre'): 5,
+        ('melisse citronnelle', 'poirier commun'): 4, ('feve', 'navet'): 3, ('mais', "verge d'or"): 5, ('poivron', 'feve'): 3, ('nerprun alaterne', 'feverolle'): None,
+        ('aubergine', 'agrume'): 5, ('pois', 'brocoli'): 5, ('melisse citronnelle', 'menthe'): None, ('cornichon', 'melon'): 3, ('coriandre', 'pasteque'): 4,
+        ('coriandre', 'potiron'): 3, ('pommier', 'cerfeuil commun'): 4, ('potentille', 'chanvre'): None, ('thym', 'chanvre'): 4, ('navet', 'courgette'): 5
+    }
+
     # IMPORTANT: Ce jeu vous permet de réaliser un test, mais c'est un jeu différent
     # qui sera transmis aux évaluateurs.
     
