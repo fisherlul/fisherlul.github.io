@@ -1,6 +1,37 @@
 from collections import deque
+import heapq
 
 def stable_job_matching(companies_prefs, candidates_prefs):
+    """
+    Implements the Stable Job Matching algorithm.
+    This function takes in the preferences of companies and candidates and returns a stable matching
+    where no company-candidate pair would prefer each other over their current matches.
+    Parameters:
+    companies_prefs (dict): A dictionary where keys are company names and values are lists of candidate names in order of preference.
+    candidates_prefs (dict): A dictionary where keys are candidate names and values are lists of company names in order of preference.
+    Returns:
+    dict: A dictionary where keys are company names and values are the names of the candidates they have hired.
+
+    Pseudo-code:
+    1. Initialize a list of free companies.
+    2. Initialize an empty dictionary to store the final company-candidate pairs.
+    3. Initialize a dictionary to keep track of each candidate's current employer (initially None).
+    4. While there are free companies:
+        a. Pick the first free company.
+        b. Get the company's preference list.
+        c. For each candidate in the company's preference list:
+            i. Check the candidate's current employer.
+            ii. If the candidate is free:
+                - Hire the candidate.
+                - Update the candidate's current employer.
+                - Break the loop.
+            iii. If the candidate prefers the new company over the current employer:
+                - Make the current employer free again.
+                - Hire the candidate.
+                - Update the candidate's current employer.
+                - Break the loop.
+    5. Return the final company-candidate pairs.
+    """
     free_companies = list(companies_prefs.keys())  # Companies start as "unmatched"
     hires = {}  # Stores final company-candidate pairs
     candidate_choices = {c: None for c in candidates_prefs}  # Candidates initially unassigned
@@ -47,16 +78,18 @@ matches = stable_job_matching(companies_prefs, candidates_prefs)
 print("Stable Job Matches:", matches)
 
 def bfs(graph, start):
-    visited = set()
-    queue = deque([start])
+    visited = []
+    queue = [start]
     order = []
 
     while queue:
-        vertex = queue.popleft()
+        vertex = queue.pop(0)
         if vertex not in visited:
-            visited.add(vertex)
+            visited.append(vertex)
             order.append(vertex)
-            queue.extend(neighbor for neighbor in graph[vertex] if neighbor not in visited)
+            for neighbor in graph[vertex]:
+                if neighbor not in visited:
+                    queue.append(neighbor)
 
     return order
 
@@ -126,11 +159,8 @@ def kruskal(graph):
             CMG.append((u, v, weight))
             union(parent, rank, x, y)
             print(f"Added edge: {u} - {v} with weight {weight}")
-        
-        if len(CMG) == len(vertices) - 1:
-            break
     
-    return CMG
+    return sorted(CMG, key=lambda x: (x[2], x[0], x[1]))
 
 # Tests
 def test_kruskal():
@@ -174,4 +204,71 @@ def test_kruskal():
     print("All tests passed!")
 
 # Run the tests
-test_kruskal()
+# test_kruskal()
+
+def prim(graph, start):
+    mst = []
+    visited = [start]
+    edges = []
+    for to, weight in graph[start].items():
+        edges.append((start, to, weight))
+    # edges = [(start, to, weight) for to, weight in graph[start].items()]
+
+    while edges:
+        edges.sort(key=lambda x: x[2])  # Sort edges by weight
+        frm, to, weight = edges.pop(0)
+        if to not in visited:
+            visited.append(to)
+            mst.append((frm, to, weight))
+
+            for to_next, weight in graph[to].items():
+                if to_next not in visited:
+                    edges.append((to, to_next, weight))
+
+    return mst
+
+# Tests
+def test_prim():
+    # Test case 1: Simple graph
+    graph1 = {
+        'A': {'B': 4, 'C': 2},
+        'B': {'A': 4, 'C': 1, 'D': 5},
+        'C': {'A': 2, 'B': 1, 'D': 8, 'E': 10},
+        'D': {'B': 5, 'C': 8, 'E': 2, 'F': 6},
+        'E': {'C': 10, 'D': 2, 'F': 3},
+        'F': {'D': 6, 'E': 3}
+    }
+    result1 = prim(graph1, 'A')
+    expected1 = [('A', 'C', 2), ('C', 'B', 1), ('D', 'E', 2), ('E', 'F', 3), ('B', 'D', 5)]
+    assert sorted(result1) == sorted(expected1), f"Test case 1 failed. Expected {expected1}, but got {result1}"
+    
+    # Test case 2: Disconnected graph
+    graph2 = {
+        'A': {'B': 1},
+        'B': {'A': 1},
+        'C': {'D': 2},
+        'D': {'C': 2},
+        'E': {'F': 3},
+        'F': {'E': 3}
+    }
+    result2 = prim(graph2, 'A')
+    expected2 = [('A', 'B', 1)]
+    assert sorted(result2) == sorted(expected2), f"Test case 2 failed. Expected {expected2}, but got {result2}"
+    
+    # Test case 3: Complete graph
+    graph3 = {
+        'A': {'B': 1, 'C': 4, 'D': 3},
+        'B': {'A': 1, 'C': 2, 'D': 5},
+        'C': {'A': 4, 'B': 2, 'D': 6},
+        'D': {'A': 3, 'B': 5, 'C': 6}
+    }
+    result3 = prim(graph3, 'A')
+    expected3 = [('A', 'B', 1), ('B', 'C', 2), ('A', 'D', 3)]
+    assert sorted(result3) == sorted(expected3), f"Test case 3 failed. Expected {expected3}, but got {result3}"
+    
+    print(graph1)
+    print(result1) 
+    
+
+# Run the tests
+test_prim()
