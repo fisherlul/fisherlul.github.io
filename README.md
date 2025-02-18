@@ -10,9 +10,9 @@ Here are some of my featured projects:
 
 | Project Name | Description | Languages + Tools |
 |-------------|-------------|-------------|
-| [Project 1](https://github.com/yourusername/project1) | An analysis on sleep quality | Python + Jupyter Notebook
-| [Project 2](https://github.com/yourusername/project2) | A garden for all of your meal's ingredients | Python
-| [Project 3](https://github.com/yourusername/project3) | Some code snippets + News page | HTML + JavaScript + CSS
+| [Project 1](https://github.com/fisherlul/project1) | An analysis on sleep quality | Python + Jupyter Notebook
+| [Project 2](https://github.com/fisherlul/project2) | A garden for all of your meal's ingredients | Python
+| [Project 3](https://github.com/fisherlul/project3) | Some code snippets + News page | HTML + JavaScript + CSS
 
 ## 🤝 Contributing
 
