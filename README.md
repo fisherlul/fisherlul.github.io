@@ -26,6 +26,7 @@ Contributions, issues, and feature requests are welcome!
 
 ## 📬 Connect with Me
 
-- LinkedIn: [Your Name](https://linkedin.com/in/yourprofile)
-- Twitter: [@yourhandle](https://twitter.com/yourhandle)
-- Email: your.email@example.com
+- LinkedIn: [Your Name](https://linkedin.com/in/huy-hung-nguyen-3567912ba)
+- Facebook: [Huy Hung](fb.com/paul-goodman-231)
+- Instagram: [hhungng_](https://www.instagram.com/hhungng_/)
+- Email: **hungnguyenamser@gmail.com** or **huy-hung.nguyen@insa-lyon.fr**
