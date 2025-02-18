@@ -11,7 +11,7 @@ Here are some of my featured projects:
 | Project Name | Description | Languages + Tools |
 |-------------|-------------|-------------|
 | [Sleep Health Analysis](https://github.com/fisherlul/Projects/tree/main/Sleep%20Analysis) | An analysis on sleep quality | Python + Jupyter Notebook
-| [APP](https://github.com/fisherlul/Projects/tree/main/APP) | A garden for all of your meal's ingredients | Python
+| [APP](https://github.com/fisherlul/Projects/tree/main/APP) | A garden for all of your meal's ingredients | Python (mostly in French)
 | [Website Mini-projects](https://github.com/fisherlul/Projects/tree/main/Web%20lessons%20%2B%20projects) | Some code snippets + News page | HTML + JavaScript + CSS
 
 ## 🤝 Contributing
