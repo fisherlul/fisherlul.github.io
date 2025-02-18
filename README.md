@@ -14,21 +14,6 @@ Here are some of my featured projects:
 | [Project 2](https://github.com/yourusername/project2) | A garden for all of your meal's ingredients | Python
 | [Project 3](https://github.com/yourusername/project3) | Some code snippets + News page | HTML + JavaScript + CSS
 
-
-## 📥 Installation & Setup
-
-To get started with any of these projects, follow these general steps:
-
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/fisherlul/project-name.git
-   ```
-2. Navigate to the project directory:
-   ```sh
-   cd project-name
-   ```
-3. Follow the setup instructions provided in each project's README.
-
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
