@@ -44,5 +44,3 @@ Contributions, issues, and feature requests are welcome!
 - LinkedIn: [Your Name](https://linkedin.com/in/yourprofile)
 - Twitter: [@yourhandle](https://twitter.com/yourhandle)
 - Email: your.email@example.com
-
-⭐️ Don't forget to star the repository if you like it!
